@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+
+100.times do |index|
+    User.create!(name: Faker::Name.name,
+                  password: Faker::Name.name,
+                  email: Faker::Internet.email,
+                  gender: ['Female', 'Male'].sample,)
+end
+
+p "Created #{User.count} users"
