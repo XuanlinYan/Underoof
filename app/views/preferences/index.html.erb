@@ -1,25 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Preference</h1>
+<h1>Room Preferences</h1>
 
 <table>
   <thead>
     <tr>
-      <th>location</th>
-      <th>start</th>
-      <th>end</th>
-      <th>user id</th>
+      <th>Location</th>
+      <th>Start Date</th>
+      <th>End Date</th>
       <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @preferences.each do |con| %>
+    <% @preferences.each do |pref| %>
       <tr>
-        <td><%= con.location %></td>
-        <td><%= con.start %></td>
-        <td><%= con.end %></td>
-        <td><%= con.userid %></td>
+        <td><%= pref.location %></td>
+        <td><%= pref.start %></td>
+        <td><%= pref.end %></td>
       </tr>
     <% end %>
   </tbody>
