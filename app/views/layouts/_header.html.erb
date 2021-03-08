@@ -7,6 +7,12 @@
             <!--<li><%= link_to "Conditions",   '/conditions' %></li>-->
             <!-- <li><%= link_to "Preferences", '/preferences' %></li>-->
             <li><%= link_to "Sign up", '/users/new' %></li>
+            <% if session[:user_id] %>
+              <li><%= link_to "#{@user.name}, logout", session_path(@user), method: 'delete'%></li>
+            <% else %>
+              <li><%= link_to "Sign in", new_session_path %></li>
+            <%end%>
+            
           </ul>
         </nav>
       </div>

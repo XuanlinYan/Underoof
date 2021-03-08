@@ -15,7 +15,7 @@ class UsersController < ApplicationController
             redirect_to users_path
         else
             flash[:notice] = "Error! Name already exists or empty, password cannot empty and must longer than 8"
-            redirect_to users_path
+            render action: :new
             # its better to use render
         end
     end
