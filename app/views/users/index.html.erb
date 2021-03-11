@@ -9,23 +9,18 @@
       <th>Name</th>
       <th>Email</th>
       <th>Gender</th>
-      <th colspan="3">Room Preference</th>
-      <th colspan="3">Room Condition</th>
+
     </tr>
   </thead>
 
   <tbody>
     <% @users.each do |user| %>
       <tr>
+
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.gender %></td>
-        <td><%= user.preference.location%></td>
-        <td><%= user.preference.start%></td>
-        <td><%= user.preference.end%></td>
-        <td><%= user.condition.location%></td>
-        <td><%= user.condition.start%></td>
-        <td><%= user.condition.end%></td>    
+
       </tr>
     <% end %>
   </tbody>

@@ -12,9 +12,8 @@ class UsersController < ApplicationController
 
         if @user.save
             flash[:notice] = "Success! Welcome!"
-            redirect_to users_path
+            redirect_to new_session_path
         else
-            flash[:notice] = "Error! Name already exists or empty, password cannot empty and must longer than 8"
             render action: :new
             # its better to use render
         end

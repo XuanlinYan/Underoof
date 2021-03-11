@@ -40,10 +40,6 @@ ActiveRecord::Schema.define(version: 2021_03_04_225136) do
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "preference_id"
-    t.integer "condition_id"
-    t.index ["condition_id"], name: "index_users_on_condition_id"
-    t.index ["preference_id"], name: "index_users_on_preference_id"
   end
 
 end

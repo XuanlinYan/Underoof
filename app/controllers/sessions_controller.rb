@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
     def create
         @user = User.find_by(name: params[:name], password: params[:password])
         if @user
-            session[:user_id] = @user.in
+            session[:user_id] = @user.id
             flash[:notice] = "Successfully Sign in"
-            redirect_to users_path
+            redirect_to root_path
         else
             flash[:notice] = "Incorrect username or password"
             render action: :new
