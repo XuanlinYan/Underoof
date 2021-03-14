@@ -1,8 +1,11 @@
 class User < ApplicationRecord
-    validates :name, presence: {message: "Name cannot empty"}
-    validates :name, uniqueness: {message: "Name already exists"}
-    validates :password, presence: {message: "password cannot empty"}
-    validates :password, length: {minimum: 8, message: "Password must longer than 8"}
+    has_secure_password
+    before_save { self.email = email.downcase }
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    
+    validates :name, presence: true
+    validates :password, presence: true, length: {minimum: 8}
+    validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
     
     # belongs_to :preference, optional:true
     # belongs_to :condition, optional:true

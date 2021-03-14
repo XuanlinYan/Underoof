@@ -1,20 +1,20 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <nav>
+<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
+    <%= link_to "Home",   '/' %>
       <div class="container">
-        <div class="collapse navbar-collapse nav-submenu-color collapse" id="bs-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right custom">
-            <li><%= link_to "Home",   '/' %></li>
-            <li><%= link_to "Users",   '/users' %></li>
-            <!--<li><%= link_to "Conditions",   '/conditions' %></li>-->
+        <!--<div class="collapse navbar-collapse nav-submenu-color collapse" id="bs-navbar-collapse-1">-->
+          <ul class="navbar-nav ml-auto custom">
+            <li><%= link_to 'Sign In', '#'%></li>
+            <li><%= link_to 'Sign Up', signup_path %></li>
             <!-- <li><%= link_to "Preferences", '/preferences' %></li>-->
+            <!--
+             <li><%= link_to "Users",   '/users' %></li>
             <% if session[:user_id] %>
               <li><%= link_to "id: #{session[:user_id]}, logout", new_session_path, method: 'delete'%></li>
             <% else %>
               <li><%= link_to "Sign in", new_session_path %></li>
             <%end%>
-            
+            -->       
           </ul>
         </div>
       </div>
-  </nav>
-</header>
+</nav>

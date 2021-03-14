@@ -3,9 +3,9 @@
     <%= form_for @user, url: users_path, method: :post do |f| %>
       <div class="form-group">
         <ul class="list-unstyled">
-          <% @user.errors.messages.values.flatten.each do |error| %>
-            <li><i class="fa fa-exclamation-circle"></i> <%= error %></li>
-          <% end -%>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li class="text-danger"> <%= msg %></li>
+          <% end %>
         </ul>
       </div>
 
@@ -14,19 +14,23 @@
       </div>
 
       <div class="form-group">
-        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-      </div>
-
-      <div class="form-group">
         <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
       </div>
 
       <div class="form-group">
-        <%= f.select :gender, [ 'Male', 'Female' ], :prompt => 'Select One'%>
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.select :gender, [ 'Male', 'Female', 'Prefer not to answer' ], :prompt => 'Select Gender'%>
       </div>
 
       <%= f.submit "Sign Up", class: "btn btn-primary" %>
-      <%= link_to "Sign In", new_session_path %>
+      <!--<%= link_to "Sign In", new_session_path %>-->
 
     <% end %>
   </div>

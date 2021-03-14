@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by(name: params[:name], password: params[:password])
-        if @user
-            session[:user_id] = @user.id
+        user = User.find_by(name: params[:session][:name])
+        if user && user.authenticate(params[:session][:password])
+            session[:user_id] = user.id
             flash[:notice] = "Successfully Sign in"
             redirect_to root_path
         else
@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
     end
     
     def destroy
+        session.delete(:user_id)
         session[:user_id] = nil
         flash[:notice] = "Exit Successfully"
         redirect_to root_path

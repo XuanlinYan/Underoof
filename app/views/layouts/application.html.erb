@@ -19,10 +19,9 @@
     <%= render 'layouts/header', user: @user%>
     
     <div class="container">
-      <% if flash[:notice] %>
-        <div class="alert alert-info"> <%= flash[:notices]%> </div>
-      <% end -%>
-      
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>   
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
