@@ -8,6 +8,5 @@ class User < ApplicationRecord
     validates :gender, presence: true
     validates :password, presence: true, length: {minimum: 8}
     
-    # belongs_to :preference, optional:true
-    # belongs_to :condition, optional:true
+    has_one :preference 
 end
