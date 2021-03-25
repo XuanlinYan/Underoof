@@ -1,20 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
-    <%= link_to "Home",   '/' %>
-      <div class="container">
-        <!--<div class="collapse navbar-collapse nav-submenu-color collapse" id="bs-navbar-collapse-1">-->
-          <ul class="navbar-nav ml-auto custom">
-            <li><%= link_to 'Sign In', '#'%></li>
-            <li><%= link_to 'Sign Up', signup_path %></li>
-            <!-- <li><%= link_to "Preferences", '/preferences' %></li>-->
-            <!--
-             <li><%= link_to "Users",   '/users' %></li>
-            <% if session[:user_id] %>
-              <li><%= link_to "id: #{session[:user_id]}, logout", new_session_path, method: 'delete'%></li>
-            <% else %>
-              <li><%= link_to "Sign in", new_session_path %></li>
-            <%end%>
-            -->       
-          </ul>
-        </div>
-      </div>
+    <%= link_to "Home", "/", id:"home"%>
+    <ul class="navbar-nav ml-auto">
+        <% if logged_in? %>
+            <li class="nav-link"><%= link_to 'Log out', logout_path, method: :delete %></li>
+        <% else %>
+            <li class="nav-link"><%= link_to 'Sign up', signup_path%></li>
+            <li class="nav-link"><%= link_to 'Sign in', signin_path%></li>
+        <% end %>
+    </ul>  
 </nav>

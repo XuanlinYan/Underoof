@@ -1,25 +1,23 @@
 class SessionsController < ApplicationController
-
     def new 
-
     end
 
     def create
         user = User.find_by(name: params[:session][:name])
         if user && user.authenticate(params[:session][:password])
-            session[:user_id] = user.id
-            flash[:notice] = "Successfully Sign in"
+            flash[:success] = "Welcome to Underoof!"
+            reset_session
+            log_in user
             redirect_to root_path
         else
-            flash[:notice] = "Incorrect username or password"
+            flash[:danger] = "Incorrect username or password"
             render action: :new
         end
     end
     
     def destroy
-        session.delete(:user_id)
-        session[:user_id] = nil
-        flash[:notice] = "Exit Successfully"
-        redirect_to root_path
+        flash[:success] = "Log out successfully"
+        log_out
+        redirect_to root_url
     end
 end

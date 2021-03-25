@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Underroof</title>
+    <title>Underoof</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -21,10 +21,9 @@
     <div class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>   
+      <% end %>
       <%= yield %>
-      <%= render 'layouts/footer' %>
     </div>
-  
+  <%= render 'layouts/footer' %>
   </body>
 </html>

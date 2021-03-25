@@ -1,16 +1,14 @@
 <div class="row">
     <div class="col-sm-4">
-        <%= form_tag sessions_path, method: "post" do %>
+        <%= form_with(url: signin_path, scope: :session, local: true) do |f| %>
             <div class="form-group">
-                <input type="text" name="name" placeholder="Username..." class="form-control" id="form_name" title="Username 6-12 characters">
+                <%= f.text_field :name, class: "form-control", placeholder: "User Name" %>
             </div>
 
             <div class="form-group">
-                <input type="password" name="password" placeholder="Password..." class="form-control"
-                id="form_password">
+                <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
             </div>
-
-            <input type="submit" class = "btn btn-primary" value="Sign in"/>
+            <%= f.submit "Sign in", class: "btn btn-dark col" %>
         <% end %>
     </div>
 </div>
