@@ -15,6 +15,15 @@ ActiveRecord::Schema.define(version: 2021_03_25_203245) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "conditions", force: :cascade do |t|
+    t.string "location"
+    t.date "start"
+    t.date "end"
+    t.string "userid"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "preferences", force: :cascade do |t|
     t.string "location"
     t.date "start"
