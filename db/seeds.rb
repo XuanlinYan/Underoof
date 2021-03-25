@@ -3,7 +3,7 @@ Preference.delete_all
 
 100.times do |index|
     User.create!(name: Faker::Name.unique.name,
-                  password: Faker::Internet.password(min_length: 8),
+                  password: Faker::Internet.password(min_length: 8, max_length: 10, mix_case: true) + Faker::Number.binary(digits: 4),
                   email: Faker::Internet.email,
                   gender: ['Female', 'Male', 'Prefer not to answer'].sample)
 end
