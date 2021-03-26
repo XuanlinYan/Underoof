@@ -1,0 +1,18 @@
+<%= form_with(url: search_url, method: :get, local: true) do |f| %>
+    <%= f.label "Min Price"%>
+    <%= f.number_field :min_price, in: 1..2500, step: 1, value: params[:min_price] %>
+
+    <%= f.label "Max Price"%>
+    <%= f.number_field :max_price, in: 2500..5000, step: 1, value: params[:max_price]%>
+
+    <%= f.label "Start Date"%>
+    <%= f.date_field :start_date, value: params[:start_date] %>
+
+    <%= f.label "End Date"%>
+    <%= f.date_field :end_date, value: params[:end_date] %>
+
+    <%= f.label "Pet Preference"%>
+    <%= f.select :pet,["Dog", "Cat", "No"], selected: params[:pet], include_blank: true %>
+    
+    <%= f.submit "Search"%>
+<% end %>

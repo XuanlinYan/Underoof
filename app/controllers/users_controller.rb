@@ -11,6 +11,8 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             flash[:success] = "Welcome to Underoof!"
+            reset_session
+            log_in @user
             redirect_to root_path
         else
             # its better to use render

@@ -17,4 +17,8 @@ module SessionsHelper
         reset_session
         @current_user = nil
     end
+
+    def authorize
+        redirect_to signin_path unless current_user
+    end
 end
