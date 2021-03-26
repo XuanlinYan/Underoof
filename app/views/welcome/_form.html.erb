@@ -1,4 +1,6 @@
+<div class="row h-100 justify-content-center align-items-center">
 <%= form_with(url: root_url, method: :get, local: true) do |f| %>
     <%= f.select :location, @USA_STATES %>
     <%= f.submit "Search"%>
 <% end %>
+</div>

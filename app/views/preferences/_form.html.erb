@@ -1,9 +1,12 @@
 <%= form_with(url: search_url, method: :get, local: true) do |f| %>
+    <%= f.hidden_field :direction, value: params[:direction] %>
+    <%= f.hidden_field :sort, value: params[:sort] %>
+
     <%= f.label "Min Price"%>
-    <%= f.number_field :min_price, in: 1..2500, step: 1, value: params[:min_price] %>
+    <%= f.number_field :min_price, in: 0..2500, step: 100, value: params[:min_price] %>
 
     <%= f.label "Max Price"%>
-    <%= f.number_field :max_price, in: 2500..5000, step: 1, value: params[:max_price]%>
+    <%= f.number_field :max_price, in: 0..5000, step: 100, value: params[:max_price]%>
 
     <%= f.label "Start Date"%>
     <%= f.date_field :start_date, value: params[:start_date] %>
