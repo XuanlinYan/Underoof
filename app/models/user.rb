@@ -6,6 +6,7 @@ class User < ApplicationRecord
     # password should include Upper, Lower, Number. length: 8-15
     
     validates :name, presence: {message: "cannot empty"}
+    validates :name, uniqueness: {message: "Name already exists"}
     validates :email, presence: {message: "cannot empty"}, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
     validates :gender, presence: {message: "cannot empty"}
     validates :password, presence: {message: "is a combination of uppercase letters, lowercase letters, and numbers. And the length is 8-15"}, format: { with: VALID_PASSWORD_REGEX }
