@@ -34,7 +34,9 @@ ActiveRecord::Schema.define(version: 2021_03_26_024732) do
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "condition_id"
     t.string "password_digest"
+    t.index ["condition_id"], name: "index_users_on_condition_id"
   end
 
 end
