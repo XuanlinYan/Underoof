@@ -8,7 +8,8 @@ class User < ApplicationRecord
     validates :name, presence: {message: "cannot empty"}
     validates :email, presence: {message: "cannot empty"}, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
     validates :gender, presence: {message: "cannot empty"}
-    validates :password, presence: {message: "is a combination of uppercase letters, lowercase letters, and numbers. And the length is 8-15"}, format: { with: VALID_PASSWORD_REGEX }
+    validates :password, presence: {message: "is a combination of uppercase letters, lowercase letters, and numbers. And the length is 8-15"}, format: { with: VALID_PASSWORD_REGEX },
+                allow_nil: true
 
     has_one :preference 
 end
