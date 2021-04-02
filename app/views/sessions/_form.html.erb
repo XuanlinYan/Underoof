@@ -2,7 +2,7 @@
     <div class="col-sm-4">
         <%= form_with(url: signin_path, scope: :session, local: true) do |f| %>
             <div class="form-group">
-                <%= f.text_field :name, class: "form-control", placeholder: "User Name" %>
+                <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
             </div>
 
             <div class="form-group">
