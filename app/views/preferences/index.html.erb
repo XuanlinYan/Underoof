@@ -1,31 +1,41 @@
 <br>
-<%= render 'form'%>
+  <%= render 'form'%>
 <br>
-<p class="text-left">total results: <%= @count%></p>
-<table class="table table-striped table-hover">
-  <thead class="thead-dark">
-    <tr>
-        <th>Name</th>
-        <th><%= sortable "min_price"%></th>
-        <th><%= sortable "max_price"%></th>
-        <th><%= sortable "start_date"%></th>
-        <th><%= sortable "end_date"%></th>
-        <th>Pet Preference</th>
-    </tr>
-  </thead>
-
-  <tbody>
-        <%  @preferences.each do |p| %>
+<div class="container">
+  <div class="row">
+    <p class="text-left">total results: <%= @count%></p>
+  </div>
+  <div class="row">
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
         <tr>
-            <td><%= p.user.name %></td>
-            <td><%= p.min_price %></td>
-            <td><%= p.max_price %></td>
-            <td><%= p.start_date %></td>
-            <td><%= p.end_date %></td>
-            <td><%= p.pet %></td>
+            <th>Name</th>
+            <th><%= sortable "min_price"%></th>
+            <th><%= sortable "max_price"%></th>
+            <th><%= sortable "start_date"%></th>
+            <th><%= sortable "end_date"%></th>
+            <th>Pet Preference</th>
         </tr>
-    <% end %> 
-  </tbody>
-</table>
-<%= will_paginate @preferences, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, 
-list_classes: %w(pagination justify-content-center) %>
+      </thead>
+
+      <tbody>
+            <%  @preferences.each do |p| %>
+            <tr>
+                <td><%= p.user.name %></td>
+                <td><%= p.min_price %></td>
+                <td><%= p.max_price %></td>
+                <td><%= p.start_date %></td>
+                <td><%= p.end_date %></td>
+                <td><%= p.pet %></td>
+            </tr>
+        <% end %> 
+      </tbody>
+    </table>
+  </div>
+  <div class="row" id="nav-bar">
+    <div class="col-md-12" >
+      <%= will_paginate @preferences, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, 
+      list_classes: %w(pagination justify-content-center) %>
+    </div>
+  </div>
+</div>
