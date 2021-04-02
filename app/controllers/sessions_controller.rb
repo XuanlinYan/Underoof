@@ -5,19 +5,19 @@ class SessionsController < ApplicationController
     def create
         user = User.find_by(name: params[:session][:name])
         if user && user.authenticate(params[:session][:password])
-            flash[:success] = "Welcome to Underoof!"
             reset_session
             log_in user
+            flash[:success] = "Welcome to Underoof!"
             redirect_to root_path
         else
-            flash[:danger] = "Incorrect username or password"
+            flash.now[:danger] = "Incorrect username or password"
             render action: :new
         end
     end
     
     def destroy
-        flash[:success] = "Log out successfully"
         log_out
+        flash[:success] = "Log out successfully"
         redirect_to root_url
     end
 end

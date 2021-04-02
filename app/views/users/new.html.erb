@@ -1,5 +1,8 @@
 <h1>Sign Up</h1>
-
-<%= render 'form', user: @user %>
-
+<% provide(:button_text, 'Sign Up') %>
+<div class="row">
+    <div class='col-sm-5'>
+    <%= render 'form', user: @user %>
+    </div>
+</div>
 <!--<button class="btn new"><%= link_to 'Back', users_path %></button>-->

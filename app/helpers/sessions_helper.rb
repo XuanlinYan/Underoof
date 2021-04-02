@@ -19,6 +19,14 @@ module SessionsHelper
     end
 
     def authorize
-        redirect_to signin_path unless current_user
+        unless logged_in?
+            flash[:danger] = "Please sign in."
+            redirect_to signin_url
+        end
+    end
+
+    def correct_user
+        @user = User.find(params[:id])
+        redirect_to(root_url) unless @user==current_user
     end
 end
