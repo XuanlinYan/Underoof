@@ -29,4 +29,9 @@ module SessionsHelper
         @user = User.find(params[:id])
         redirect_to(root_url) unless @user==current_user
     end
+
+    def admin_user?
+        # admin@underoof.com
+        return current_user.email == "admin@underoof.com"
+    end
 end
