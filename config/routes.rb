@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get    '/signin',   to: 'sessions#new'
   post   '/signin',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  get '/underoofadmin', to: 'users#admin'
+  get '/underoofadmin', to: 'admin#admins'
 
 end

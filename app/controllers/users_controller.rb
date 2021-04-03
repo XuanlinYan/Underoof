@@ -36,11 +36,6 @@ class UsersController < ApplicationController
         end
     end
 
-    def admin
-        @users = User.all()
-        render "admin"
-    end
-
     private
 
     def user_params

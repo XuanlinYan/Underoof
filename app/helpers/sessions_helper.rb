@@ -32,6 +32,13 @@ module SessionsHelper
 
     def admin_user?
         # admin@underoof.com
-        return current_user.email == "admin@underoof.com"
+        return current_user.email == "56@qq.com"
+    end
+
+    def admin_authorize
+        unless admin_user?
+            flash[:danger] = "Please sign in."
+            redirect_to signin_url
+        end
     end
 end
