@@ -37,8 +37,8 @@ module SessionsHelper
 
     def admin_authorize
         unless admin_user?
-            flash[:danger] = "Please sign in."
-            redirect_to signin_url
+            flash[:danger] = "Please Input Admin account."
+            redirect_to root_path
         end
     end
 end
