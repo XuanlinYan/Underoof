@@ -59,3 +59,7 @@ gem 'faker'
 gem 'bootstrap', '4.0'
 gem 'bcrypt'
 gem 'will_paginate-bootstrap4'
+gem 'will_paginate', '~> 3.1.1'
+
+gem 'kaminari'
+gem 'rails_admin', '~> 2.0'
