@@ -275,7 +275,6 @@ DEPENDENCIES
   capybara (>= 3.26)
   faker
   jbuilder (~> 2.7)
-  kaminari
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
@@ -291,7 +290,6 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
-  will_paginate (~> 3.1.1)
   will_paginate-bootstrap4
 
 RUBY VERSION
