@@ -18,3 +18,6 @@ https://github.com/XuanlinYan/Underoof
 
 Heroku Link:
 https://frozen-plains-73257.herokuapp.com/
+
+# Admin
+use "localhost:3000/admin" to access database.

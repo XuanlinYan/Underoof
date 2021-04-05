@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_042943) do
+ActiveRecord::Schema.define(version: 2021_04_04_191331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.bigint "county_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["county_id"], name: "index_cities_on_county_id"
+  end
+
+  create_table "counties", force: :cascade do |t|
+    t.string "name"
+    t.bigint "state_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["state_id"], name: "index_counties_on_state_id"
+  end
 
   create_table "preferences", force: :cascade do |t|
     t.string "location"
@@ -28,15 +44,22 @@ ActiveRecord::Schema.define(version: 2021_04_02_042943) do
     t.index ["user_id"], name: "index_preferences_on_user_id"
   end
 
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.string "two_digit_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "condition_id"
     t.string "password_digest"
-    t.index ["condition_id"], name: "index_users_on_condition_id"
   end
 
+  add_foreign_key "cities", "counties"
+  add_foreign_key "counties", "states"
 end

@@ -2,6 +2,15 @@
     <%= f.hidden_field :direction, value: params[:direction] %>
     <%= f.hidden_field :sort, value: params[:sort] %>
 
+    <%= f.label :state_label, "State" %>
+    <%= f.collection_select :state_id, State.order(:name), :id, :name, include_blank: true %>
+
+    <%= f.label :county_label, "County" %>
+    <%= f.grouped_collection_select :county_id, State.order(:name), :counties, :id, :id, :name, include_blank: true %>
+
+    <%= f.label :city_label, "City"%>
+    <%= f.grouped_collection_select :city_id, County.order(:name), :cities, :id, :id, :name, include_blank: true %>
+
     <%= f.label "Min Price"%>
     <%= f.number_field :min_price, in: 0..2500, step: 100, value: params[:min_price] %>
 

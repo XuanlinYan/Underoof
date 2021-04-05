@@ -1,11 +1,5 @@
 <%= form_for @user, local: true do |f| %>
-    <div class="form-group">
-      <ul class="list-unstyled">
-        <% @user.errors.full_messages.each do |msg| %>
-          <li class="text-danger"> <%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%= render 'shared/error_messages' %>
 
     <div class="form-group">
       <%= f.text_field :name, class: "form-control", placeholder: "User Name" %>
