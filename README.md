@@ -1,23 +1,34 @@
-# README
+## Table of Contents
 
-Team Members:
+# General Info
+
+# Functionality Summary
+
+# URL Patterns
+
+# Database Schema
+
+# Planed Views
+
+# Dependencies
+
+## General Info
+
+Underoof is a web application to find roomates match.
+
+# Team Members:
+
 Xiangyu Li, Xuanlin Yan, Xulin Wang, Zhengchu
 
-Individual Contribution:
-Xiangyu Li:
-Created user, room preference and room condition models, added fake data to the database and completed the signup function
-Xuanlin Yan:
-Refined models and built associations
-Xulin Wang:
-Added sign in form and functionality
-Zheng Chu:
-Finished sign up UI
+# Github Repo Link:
 
-Github Repo Link:
 https://github.com/XuanlinYan/Underoof
 
-Heroku Link:
+# Heroku Link:
+
 https://frozen-plains-73257.herokuapp.com/
 
-# Admin
+# Admin Access
+
 use "localhost:3000/admin" to access database.
+lalala
