@@ -7,6 +7,6 @@ module PreferencesHelper
 
     private
     def search_params
-        params.permit(:min_price, :max_price, :start_date, :end_date, :pet)
+        params.permit(:state_id, :county_id, :min_price, :max_price, :start_date, :end_date, :pet)
     end
 end

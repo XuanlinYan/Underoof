@@ -5,6 +5,7 @@
   <div class="row">
     <p class="text-left">total results: <%= @count%></p>
   </div>
+
   <div class="row">
     <table class="table table-striped table-hover">
       <thead class="thead-dark">
@@ -24,10 +25,10 @@
       <tbody>
             <%  @preferences.each do |p| %>
             <tr>
+                <td><%= p.user.name %></td>
                 <td><%= p.state.name %></td>
                 <td><%= p.county.name %></td>
                 <td><%= p.city.name %></td>
-                <td><%= p.user.name %></td>
                 <td><%= p.min_price %></td>
                 <td><%= p.max_price %></td>
                 <td><%= p.start_date %></td>

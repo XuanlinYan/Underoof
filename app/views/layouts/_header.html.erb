@@ -2,11 +2,11 @@
     <%= link_to "Home", "/", id:"home"%>
     <ul class="navbar-nav ml-auto">
         <% if logged_in? and admin_user?%>
-            <li class="nav-link"><%= link_to 'Search', search_path %></li>
+            <li class="nav-link"><%= link_to 'Search', search_path, method: :get %></li>
             <li class="nav-link"><%= link_to 'Data', underoofadmin_path, method: :get %></li>
             <li class="nav-link"><%= link_to 'Log out', logout_path, method: :delete %></li>
         <% elsif logged_in? and !admin_user?%>
-            <li class="nav-link"><%= link_to 'Search', search_path %></li>
+            <li class="nav-link"><%= link_to 'Search', search_path, method: :get %></li>
             <li class="nav-link"><%= link_to 'Profile', edit_user_path(current_user) %></li>
             <li class="nav-link"><%= link_to 'Log out', logout_path, method: :delete %></li>
         <% else %>
