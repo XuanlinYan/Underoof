@@ -6,10 +6,10 @@
     <%= f.collection_select :state_id, State.order(:name), :id, :name, include_blank: true %>
 
     <%= f.label :county_label, "County" %>
-    <%= f.grouped_collection_select :county_id, State.order(:name), :counties, :id, :id, :name, include_blank: true %>
+    <%= f.grouped_collection_select :county_id, State.order(:name), :counties, :name, :id, :name, include_blank: true %>
 
     <%= f.label :city_label, "City"%>
-    <%= f.grouped_collection_select :city_id, County.order(:name), :cities, :id, :id, :name, include_blank: true %>
+    <%= f.grouped_collection_select :city_id, County.order(:name), :cities, :name, :id, :name, include_blank: true %>
 
     <%= f.label "Min Price"%>
     <%= f.number_field :min_price, in: 0..2500, step: 100, value: params[:min_price] %>

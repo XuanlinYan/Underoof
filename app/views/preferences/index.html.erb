@@ -10,6 +10,9 @@
       <thead class="thead-dark">
         <tr>
             <th>Name</th>
+            <th>State</th>
+            <th>County</th>
+            <th>City</th>
             <th><%= sortable "min_price"%></th>
             <th><%= sortable "max_price"%></th>
             <th><%= sortable "start_date"%></th>
@@ -21,6 +24,9 @@
       <tbody>
             <%  @preferences.each do |p| %>
             <tr>
+                <td><%= p.state.name %></td>
+                <td><%= p.county.name %></td>
+                <td><%= p.city.name %></td>
                 <td><%= p.user.name %></td>
                 <td><%= p.min_price %></td>
                 <td><%= p.max_price %></td>
