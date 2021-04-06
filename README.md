@@ -14,13 +14,11 @@
     <li>
       <a href="#functionality-summary">Functionality Summary</a>
       <ul>
-        <li><a href="#homepage-search">Homepage Search</a></li>
         <li><a href="#sign-up">Sign Up</a></li>
         <li><a href="#sign-in">Sign In</a></li>
-        <li><a href="#admin-access">Admin Access</a></li>
+        <li><a href="#search-page">Search Page</a></li>
         <li><a href="#profile">Profile</a></li>
-        <li><a href="#search-filter">Search Filter</a></li>
-        <li><a href="#sort-search-results">Sort Search Results</a></li>
+        <li><a href="#admin-access">Admin Access</a></li>
         <li><a href="#log-out">Log Out</a></li>
       </ul>
     </li>
