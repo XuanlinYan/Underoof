@@ -35,12 +35,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Underoof is the web application where one can find the matched roommates. 
+Underoof is the web application where users without a room can find the matched roommates based on room preferences. 
 
 * Team members: Xiangyu Li, Xuanlin Yan, Xulin Wang, Zhengchu
 * Github Repo Link: https://github.com/XuanlinYan/Underoof
-* Heroku Link: https://frozen-plains-73257.herokuapp.com/
-
+* Heroku Link: https://underoof.herokuapp.com/
 
 
 
@@ -50,60 +49,102 @@ Underoof is the web application where one can find the matched roommates.
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-#### Homepage Search
-On the home page, without out signing in, user chooses a location from the search drop down menu to view the blurred profile picture of matched rommates
-(blurry picture not implemented yet)
-
 #### Sign Up
 
-On the home page, user clicks sign up button on navbar, fills in user name, email, password and password comfirmation and gender and submit, he/she is automatically signed in.
+* With name which is required
+* With email, which is required and unique
+* With password which must contain capitalized letters, uncapitalized letters and digits and has length between 8 and 15
+* With password confirmation which has same rule as password has and must match the password
+* With gender which is selected from a drop down menu including "Male", "Female", and "Prefer not to answer"
+* Has error messages indicating where needs to be modified to sign up successfully
 
 #### Sign In
-On the home page, user clicks sign in button on nav bar, fills in email and password and clicks sign in to get to the individual home page
-#### Admin Access
-Use "localhost:3000/admin" to access database...(TO BE FILLED IN)
+
+* With unique email
+* With password
+* Shows error message "Incorrect username or password" if user does not exist or email and password does not match
+
+#### Search Page
+* Only signed in/up users could search
+* Users could search pages with state, county, city(not implemenmted yet), min price, max price, start date, end date and pet prefernce
+* The content of County drop down menu is different based on which State is selected
+* Search results could be sorted by min price, max price, start date and end date
+* Default sort column is min price and default sort direction is asc
+* Users could view details of each search result by clicking on "show" button
+* Paginate to ensure number of search results on each page is no more than 30
+
 #### Profile
-On individual home page, user click profile to edit user name or email, or fill in password and password confirmation to update password.
-#### Search Filter
-On individual home page, click search button on nav bar. On the popped up filter page, user selects location (country, state, city), preferred max and min price, preffered lease start date and end date and per preference and clicks search, the matched rommates information is displayed. 
-#### Sort Search Results
-User clicks colomn name (max price, min price, start date and end date) he/she intends to sort by, the search results will be sorted in order by the clicked field.
+* On personal information page, it will display name, email and gender of current user
+* Users could edit their name, email, password or gender
+* Password and password confirmation form could be nil when submitting
+* On room preferences page, it will display preferences of current user if they created one before. Otherwise, there will be a "Create preferences" button. (not implemented yet)
+* Users could not modify any information of others
+
+
+#### Admin Access
+
+Use "localhost:3000/admin" to access database...(TO BE FILLED IN)
+
 
 #### Log Out
-User clicks log out button on nav bar to exit.
+* By clicking ont "Log out" button on nav bar
+* Redirect users to home page
 
 
 
 ## Url Patterns
 * Home page: /
-* Display the sign in prompt and check for correct password: **/signin**
-* Display the user sign up form and check for valid user name, email and password: **/signup**
-* Display of specific user's profile page and prompt of whether successfully edit: **/users/1234/edit**
-* Display of search filter and all users: **/search**
-* Display of sorted search results by a certain order(descending order here) and according to a certain field(min price here):       
-**/search?direction=desc&sort=min_price**
-* Display of sorted search results by a certain order(descending order here) ， according to a certain field(min price here) and a certain filter(pet preference here): </br>  **/search?direction=desc&sort=min_price&state_id=&county_id=&city_id=&min_price=&max_price=&start_date=&end_date=&pet=Dog&commit=Search**
-* Log out: **/logout**
+* Display the sign in page: **/signin**
+* Display the sign up page: **/signup**
+* Display of search page: **/search**
+* Display search results without clicking on sortable column: **/search?direction=&sort=&state_id=&min_price=&max_price=&start_date=&end_date=&pet=Cat&commit=Search**
+* Display of sorted search results by a certain order(descending order here) and according to a certain field(min price here) without search filter:       
+**preferences?commit=Search&county_id=&direction=asc&end_date=&max_price=&min_price=&pet=&sort=min_price&start_date=&state_id=**
+* Display of sorted search results by a certain order(descending order here) ，according to a certain field(min price here) and a certain filter(pet preference here): </br>  **/preferences?direction=desc&sort=min_price&state_id=&county_id=&city_id=&min_price=&max_price=&start_date=&end_date=&pet=Dog&commit=Search**
+* Display next page of search results: **/preferences?commit=Search&county_id=&direction=desc&end_date=&max_price=&min_price=&page=2&pet=Dog&sort=min_price&start_date=&state_id=**
+* Display of details of one search result: **/preferences/:id**
+* Display of specific user's personal information profile page: **/users/:id/edit**
+* Log out: /
 * (Admin url To BE FILLED IN)
 
 
 
 
 ## Database Schema
-(TO BE FILLED IN)
-
+### Models
+* users(name: string, email:string, gender:string, password_digest:string)
+* preferences(location: string, start_date: date, end_date:date, min_price: integer, max_price: integer, pet: string, user_id: foreign key referring id in users, state_id: foreign key referring id in states, county_id: foreign key referring id in counties, city_id: foreign key referring id in cities)
+* states(name: string, two_digit_code:string )
+* counties(name: string, state_id: foreign key referring id in states)
+* cities(name: string, county_id: foreign key referring id in counties)
+### Assotiations
+* User <-> Preference (one to one)
+* State -> County (one to many)
+* County -> City (one to many)
+* State -> Preference (one to many)
+* County -> Preference (one to many) 
+* City -> Preference (one to many)
 
 ## Planned Views
-(TO BE FILLED IN)
+* Sign up page(implemented)
+* Sign in page(implemented)
+* Home page(implemented part)
+* Search page(implemented)
+* Search results details page(implemented)
+* Chat page(not implemented)
+* Profile page(implemented part)
 
 
 
 ## Dependencies
 * [Bootstrap](https://getbootstrap.com)
 * [Will_paginate](https://github.com/mislav/will_paginate)
+* [will_paginate-bootstrap4](https://github.com/delef/will_paginate-bootstrap4)
 * [kaminari](https://github.com/kaminari/kaminari)
 * [Faker](https://github.com/faker-ruby/faker)
 * [Bcrypt](https://github.com/bcrypt-ruby/bcrypt-ruby)
 * [Rails_admin](https://github.com/sferik/rails_admin)
 * [Rails-controller-testing](https://github.com/rails/rails-controller-testing)
+* [jQuery](https://www.botreetechnologies.com/blog/introducing-jquery-in-rails-6-using-webpacker)\
+* [Coffeescript](https://bloggie.io/@kinopyo/rails-enable-coffeescript-with-webpacker)
 
