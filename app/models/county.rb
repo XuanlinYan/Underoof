@@ -1,4 +1,5 @@
 class County < ApplicationRecord
+    has_many :preferences
     belongs_to :state, inverse_of: :counties
     has_many   :cities, inverse_of: :county, dependent: :destroy
   

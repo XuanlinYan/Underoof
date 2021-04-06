@@ -167,7 +167,6 @@ AR,Washington
 AR,White
 AR,Woodruff
 AR,Yell
-AS,American Samoa
 AZ,Apache
 AZ,Cochise
 AZ,Coconino
@@ -312,7 +311,6 @@ CT,New Haven
 CT,New London
 CT,Tolland
 CT,Windham
-DC,District Of Columbia
 DE,Kent
 DE,New Castle
 DE,Sussex
@@ -383,7 +381,6 @@ FL,Volusia
 FL,Wakulla
 FL,Walton
 FL,Washington
-FM,Federated States Of Micro
 GA,Appling
 GA,Atkinson
 GA,Bacon
@@ -543,7 +540,6 @@ GA,Wilcox
 GA,Wilkes
 GA,Wilkinson
 GA,Worth
-GU,Guam
 HI,Hawaii
 HI,Honolulu
 HI,Kauai
@@ -1228,7 +1224,6 @@ ME,Somerset
 ME,Waldo
 ME,Washington
 ME,York
-MH,Marshall Islands
 MI,Alcona
 MI,Alger
 MI,Allegan
@@ -1514,7 +1509,6 @@ MO,Wayne
 MO,Webster
 MO,Worth
 MO,Wright
-MP,Northern Mariana Islands
 MS,Adams
 MS,Alcorn
 MS,Amite
@@ -2310,85 +2304,6 @@ PA,Wayne
 PA,Westmoreland
 PA,Wyoming
 PA,York
-PR,Adjuntas
-PR,Aguada
-PR,Aguadilla
-PR,Aguas Buenas
-PR,Aibonito
-PR,Anasco
-PR,Arecibo
-PR,Arroyo
-PR,Barceloneta
-PR,Barranquitas
-PR,Bayamon
-PR,Cabo Rojo
-PR,Caguas
-PR,Camuy
-PR,Canovanas
-PR,Carolina
-PR,Catano
-PR,Cayey
-PR,Ceiba
-PR,Ciales
-PR,Cidra
-PR,Coamo
-PR,Comerio
-PR,Corozal
-PR,Culebra
-PR,Dorado
-PR,Fajardo
-PR,Florida
-PR,Guanica
-PR,Guayama
-PR,Guayanilla
-PR,Guaynabo
-PR,Gurabo
-PR,Hatillo
-PR,Hormigueros
-PR,Humacao
-PR,Isabela
-PR,Jayuya
-PR,Juana Diaz
-PR,Juncos
-PR,Lajas
-PR,Lares
-PR,Las Marias
-PR,Las Piedras
-PR,Loiza
-PR,Luquillo
-PR,Manati
-PR,Maricao
-PR,Maunabo
-PR,Mayaguez
-PR,Moca
-PR,Morovis
-PR,Naguabo
-PR,Naranjito
-PR,Orocovis
-PR,Patillas
-PR,Penuelas
-PR,Ponce
-PR,Quebradillas
-PR,Rincon
-PR,Rio Grande
-PR,Sabana Grande
-PR,Salinas
-PR,San German
-PR,San Juan
-PR,San Lorenzo
-PR,San Sebastian
-PR,Santa Isabel
-PR,Toa Alta
-PR,Toa Baja
-PR,Trujillo Alto
-PR,Utuado
-PR,Vega Alta
-PR,Vega Baja
-PR,Vieques
-PR,Villalba
-PR,Yabucoa
-PR,Yauco
-PW,Palau
 RI,Bristol
 RI,Kent
 RI,Newport
@@ -3019,9 +2934,6 @@ VA,Winchester City
 VA,Wise
 VA,Wythe
 VA,York
-VI,Saint Croix
-VI,Saint John
-VI,Saint Thomas
 VT,Addison
 VT,Bennington
 VT,Caledonia

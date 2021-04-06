@@ -1,4 +1,5 @@
 class City < ApplicationRecord
+    has_many :preferences
     belongs_to :county, inverse_of: :cities
 
     validates :county, presence: true

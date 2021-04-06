@@ -1433,7 +1433,6 @@ AR,Yell,Havana
 AR,Yell,Ola
 AR,Yell,Plainview
 AR,Yell,Rover
-AS,American Samoa,Pago Pago
 AZ,Apache,Alpine
 AZ,Apache,Chambers
 AZ,Apache,Chinle
@@ -3619,8 +3618,6 @@ CT,Windham,Willimantic
 CT,Windham,Windham
 CT,Windham,Woodstock
 CT,Windham,Woodstock Valley
-DC,District Of Columbia,Anacostia Annex
-DC,District Of Columbia,Washington
 DE,Kent,Camden Wyoming
 DE,Kent,Cheswold
 DE,Kent,Clayton
@@ -4205,10 +4202,6 @@ FL,Washington,Chipley
 FL,Washington,Ebro
 FL,Washington,Vernon
 FL,Washington,Wausau
-FM,Federated States Of Micro,Chuuk
-FM,Federated States Of Micro,Kosrae
-FM,Federated States Of Micro,Pohnpei
-FM,Federated States Of Micro,Yap
 GA,Appling,Baxley
 GA,Appling,Surrency
 GA,Atkinson,Axson
@@ -4840,24 +4833,6 @@ GA,Worth,Poulan
 GA,Worth,Sumner
 GA,Worth,Sylvester
 GA,Worth,Warwick
-GU,Guam,Agana Heights
-GU,Guam,Agat
-GU,Guam,Asan
-GU,Guam,Barrigada
-GU,Guam,Dededo
-GU,Guam,Hagatna
-GU,Guam,Inarajan
-GU,Guam,Mangilao
-GU,Guam,Merizo
-GU,Guam,Mongmong
-GU,Guam,Piti
-GU,Guam,Santa Rita
-GU,Guam,Sinajana
-GU,Guam,Talofofo
-GU,Guam,Tamuning
-GU,Guam,Umatac
-GU,Guam,Yigo
-GU,Guam,Yona
 HI,Hawaii,Captain Cook
 HI,Hawaii,Hakalau
 HI,Hawaii,Hawaii National Park
@@ -11607,8 +11582,6 @@ ME,York,West Newfield
 ME,York,York
 ME,York,York Beach
 ME,York,York Harbor
-MH,Marshall Islands,Ebeye
-MH,Marshall Islands,Majuro
 MI,Alcona,Barton City
 MI,Alcona,Black River
 MI,Alcona,Curran
@@ -14283,9 +14256,6 @@ MO,Wright,Macomb
 MO,Wright,Mansfield
 MO,Wright,Mountain Grove
 MO,Wright,Norwood
-MP,Northern Mariana Islands,Rota
-MP,Northern Mariana Islands,Saipan
-MP,Northern Mariana Islands,Tinian
 MS,Adams,Natchez
 MS,Adams,Sibley
 MS,Adams,Washington
@@ -23570,109 +23540,6 @@ PA,York,Wrightsville
 PA,York,York
 PA,York,York Haven
 PA,York,York New Salem
-PR,Adjuntas,Adjuntas
-PR,Aguada,Aguada
-PR,Aguadilla,Aguadilla
-PR,Aguadilla,San Antonio
-PR,Aguas Buenas,Aguas Buenas
-PR,Aibonito,Aibonito
-PR,Aibonito,La Plata
-PR,Anasco,Anasco
-PR,Arecibo,Arecibo
-PR,Arecibo,Bajadero
-PR,Arecibo,Garrochales
-PR,Arecibo,Sabana Hoyos
-PR,Arroyo,Arroyo
-PR,Barceloneta,Barceloneta
-PR,Barranquitas,Barranquitas
-PR,Bayamon,Bayamon
-PR,Bayamon,Fort Buchanan
-PR,Cabo Rojo,Boqueron
-PR,Cabo Rojo,Cabo Rojo
-PR,Caguas,Caguas
-PR,Camuy,Camuy
-PR,Canovanas,Canovanas
-PR,Carolina,Carolina
-PR,Catano,Catano
-PR,Cayey,Cayey
-PR,Ceiba,Ceiba
-PR,Ceiba,Roosevelt Roads
-PR,Ciales,Ciales
-PR,Cidra,Cidra
-PR,Coamo,Coamo
-PR,Comerio,Comerio
-PR,Corozal,Corozal
-PR,Culebra,Culebra
-PR,Dorado,Dorado
-PR,Fajardo,Fajardo
-PR,Fajardo,Puerto Real
-PR,Florida,Florida
-PR,Guanica,Ensenada
-PR,Guanica,Guanica
-PR,Guayama,Aguirre
-PR,Guayama,Guayama
-PR,Guayanilla,Guayama
-PR,Guayanilla,Guayanilla
-PR,Guaynabo,Guaynabo
-PR,Gurabo,Gurabo
-PR,Hatillo,Hatillo
-PR,Hormigueros,Hormigueros
-PR,Humacao,Humacao
-PR,Humacao,Punta Santiago
-PR,Isabela,Isabela
-PR,Jayuya,Jayuya
-PR,Juana Diaz,Juana Diaz
-PR,Juncos,Juncos
-PR,Lajas,Lajas
-PR,Lares,Castaner
-PR,Lares,Lares
-PR,Las Marias,Las Marias
-PR,Las Piedras,Las Piedras
-PR,Loiza,Loiza
-PR,Luquillo,Luquillo
-PR,Manati,Manati
-PR,Maricao,Maricao
-PR,Maunabo,Maunabo
-PR,Mayaguez,Mayaguez
-PR,Moca,Moca
-PR,Morovis,Morovis
-PR,Naguabo,Naguabo
-PR,Naguabo,Rio Blanco
-PR,Naranjito,Naranjito
-PR,Orocovis,Orocovis
-PR,Patillas,Patillas
-PR,Penuelas,Penuelas
-PR,Ponce,Coto Laurel
-PR,Ponce,Mercedita
-PR,Ponce,Ponce
-PR,Quebradillas,Quebradillas
-PR,Rincon,Rincon
-PR,Rio Grande,Palmer
-PR,Rio Grande,Rio Grande
-PR,Sabana Grande,Sabana Grande
-PR,Salinas,Salinas
-PR,San German,Rosario
-PR,San German,San German
-PR,San Juan,Carolina
-PR,San Juan,Guaynabo
-PR,San Juan,San Juan
-PR,San Lorenzo,San Lorenzo
-PR,San Sebastian,San Sebastian
-PR,Santa Isabel,Santa Isabel
-PR,Toa Alta,Toa Alta
-PR,Toa Baja,Sabana Seca
-PR,Toa Baja,Toa Baja
-PR,Trujillo Alto,Saint Just Contract
-PR,Trujillo Alto,Trujillo Alto
-PR,Utuado,Angeles
-PR,Utuado,Utuado
-PR,Vega Alta,Vega Alta
-PR,Vega Baja,Vega Baja
-PR,Vieques,Vieques
-PR,Villalba,Villalba
-PR,Yabucoa,Yabucoa
-PR,Yauco,Yauco
-PW,Palau,Palau
 RI,Bristol,Barrington
 RI,Bristol,Bristol
 RI,Bristol,Prudence Island
@@ -27681,11 +27548,6 @@ VA,York,Lackey
 VA,York,Lightfoot
 VA,York,Seaford
 VA,York,Yorktown
-VI,Saint Croix,Christiansted
-VI,Saint Croix,Frederiksted
-VI,Saint Croix,Kingshill
-VI,Saint John,St John
-VI,Saint Thomas,St Thomas
 VT,Addison,Bridport
 VT,Addison,Bristol
 VT,Addison,East Middlebury
