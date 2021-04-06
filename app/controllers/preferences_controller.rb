@@ -35,6 +35,10 @@ class PreferencesController < ApplicationController
         @preferences = @preferences.order(sort_column + " " + sort_direction).paginate(:per_page=>30, :page=>params[:page])
     end
 
+    def show
+        @preference = Preference.find(params[:id])
+    end
+
     private
     def sort_column
         (Preference.column_names-["pet", "user.name"]).include?(params[:sort]) ? params[:sort] : "min_price"

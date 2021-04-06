@@ -19,6 +19,7 @@
             <th><%= sortable "start_date"%></th>
             <th><%= sortable "end_date"%></th>
             <th>Pet Preference</th>
+            <th>Details</th>
         </tr>
       </thead>
 
@@ -34,7 +35,9 @@
                 <td><%= p.start_date %></td>
                 <td><%= p.end_date %></td>
                 <td><%= p.pet %></td>
+                <td><%= link_to "show", preference_path(p)%></td>
             </tr>
+            
         <% end %> 
       </tbody>
     </table>

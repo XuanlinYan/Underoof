@@ -33,3 +33,6 @@ jQuery ->
             
         else
             $("#county_id").empty()
+
+    $("tr[data-link]").click ->
+        window.location = $(this).data("link")

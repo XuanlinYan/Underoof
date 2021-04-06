@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # resources :preferences
+  resources :preferences
   resources :users
   resources :sessions
   
@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   post   '/signin',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/underoofadmin', to: 'admin#admins'
-
 end

@@ -1,0 +1,12 @@
+<h3>Roommate Personal Information</h3>
+<p>Name: <%= @preference.user.name%></p>
+<p>Gender: <%= @preference.user.gender%></p>
+<p>Email: <%= @preference.user.email%></p>
+
+<h3>Roommate Preferences</h3>
+<p>State: <%= State.find(@preference.state_id).name%></p>
+<p>County: <%= County.find(@preference.county_id).name%></p>
+<p>Price: $<%= @preference.min_price%> - $<%= @preference.max_price%></p>
+<p>Date: <%= @preference.start_date%> - <%= @preference.end_date%></p>
+<p>Pet preference: <%= @preference.pet%></p>
+<%= link_to "Let's chat!", "#"%>
