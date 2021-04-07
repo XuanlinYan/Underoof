@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post   '/signin',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/underoofadmin', to: 'admin#admins'
+  get 'cities/:state', to: 'application#cities'
 end

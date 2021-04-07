@@ -3,16 +3,16 @@
     <%= f.hidden_field :sort, value: params[:sort] %>
 
     <%= f.label :state_label, "State" %>
-    <%= f.collection_select :state_id, State.order(:name), :id, :name, include_blank: "-----Select State---", selected: params[:state_id] %>
+    <%= f.select :state, options_for_select(CS.states(:us).invert, params[:state])%>
 
-    <%= f.label :county_label, "County" %>
-    <%= f.grouped_collection_select :county_id, State.order(:name), :counties, :id, :id, :name, include_blank: true, selected: params[:county_id] %>
+    <%= f.label :county_label, "City" %>
+    <%= f.select :city, options_for_select({}, params[:city]) %>
 
     <%= f.label "Min Price"%>
-    <%= f.number_field :min_price, in: 0..2500, step: 100, value: params[:min_price]%>
+    <%= f.number_field :min_price, in: 0..2500, step: 1, value: params[:min_price]%>
 
     <%= f.label "Max Price"%>
-    <%= f.number_field :max_price, in: 0..5000, step: 100, value: params[:max_price]%>
+    <%= f.number_field :max_price, in: 0..5000, step: 1, value: params[:max_price]%>
 
     <%= f.label "Start Date"%>
     <%= f.date_field :start_date, value: params[:start_date] %>

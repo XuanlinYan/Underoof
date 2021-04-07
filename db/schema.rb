@@ -17,18 +17,10 @@ ActiveRecord::Schema.define(version: 2021_04_06_005223) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.bigint "county_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["county_id"], name: "index_cities_on_county_id"
-  end
-
-  create_table "counties", force: :cascade do |t|
-    t.string "name"
     t.bigint "state_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["state_id"], name: "index_counties_on_state_id"
+    t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
   create_table "preferences", force: :cascade do |t|
@@ -42,10 +34,8 @@ ActiveRecord::Schema.define(version: 2021_04_06_005223) do
     t.string "pet"
     t.bigint "user_id"
     t.bigint "state_id"
-    t.bigint "county_id"
     t.bigint "city_id"
     t.index ["city_id"], name: "index_preferences_on_city_id"
-    t.index ["county_id"], name: "index_preferences_on_county_id"
     t.index ["state_id"], name: "index_preferences_on_state_id"
     t.index ["user_id"], name: "index_preferences_on_user_id"
   end
@@ -66,6 +56,5 @@ ActiveRecord::Schema.define(version: 2021_04_06_005223) do
     t.string "password_digest"
   end
 
-  add_foreign_key "cities", "counties"
-  add_foreign_key "counties", "states"
+  add_foreign_key "cities", "states"
 end

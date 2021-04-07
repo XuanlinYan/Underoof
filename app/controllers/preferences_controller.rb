@@ -4,12 +4,14 @@ class PreferencesController < ApplicationController
     def index
         @preferences = Preference.all()
 
-        if !params[:state_id].blank?
-        @preferences = @preferences.where("state_id = ?", "#{params[:state_id]}")
+        if !params[:state].blank?
+            curr_state_id = State.where(two_digit_code: params[:state]).ids[0]
+            @preferences = @preferences.where("state_id = ?", "#{curr_state_id}")
         end
 
-        if !params[:county_id].blank?
-            @preferences = @preferences.where("county_id = ?", "#{params[:county_id]}")
+        if !params[:city].blank?
+            curr_city_id = City.where(name: params[:city]).ids[0]
+            @preferences = @preferences.where("city_id = ?", "#{curr_city_id}")
         end
 
         if !params[:min_price].blank?

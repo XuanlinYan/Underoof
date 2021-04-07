@@ -64,3 +64,5 @@ gem 'will_paginate', '~> 3.1.1'
 gem 'kaminari'
 gem 'rails_admin', '~> 2.0'
 gem 'rails-controller-testing'
+
+gem 'city-state'
