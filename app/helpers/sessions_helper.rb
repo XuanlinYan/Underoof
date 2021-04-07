@@ -32,7 +32,7 @@ module SessionsHelper
 
     def admin_user?
         # admin@underoof.com
-        return current_user.email == "56@qq.com"
+        return current_user.email == "admin@underoof.com"
     end
 
     def admin_authorize
