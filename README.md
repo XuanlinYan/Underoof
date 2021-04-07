@@ -81,8 +81,8 @@ To get a local copy up and running follow these simple example steps.
 
 #### Admin Access
 
-Use "localhost:3000/admin" to access database...(TO BE FILLED IN)
-
+* Use "/admin" to access the database. Underoof used the rails_admin gem to display all the data. This page supports administrators to manage all data include  edit, new, delete...
+* When the current user's email is **admin@underoof.com**, the "Profile" button on the right top corner will transfer to "Admin", click it to see all users details or use "/underoofadmin"
 
 #### Log Out
 * By clicking ont "Log out" button on nav bar
@@ -103,7 +103,8 @@ Use "localhost:3000/admin" to access database...(TO BE FILLED IN)
 * Display of details of one search result: **/preferences/:id**
 * Display of specific user's personal information profile page: **/users/:id/edit**
 * Log out: /
-* (Admin url To BE FILLED IN)
+* Database Admin: /admin
+* Users Admin: /underoofadmin (must login with email: admin@underoof.com)
 
 
 
