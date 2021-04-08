@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   
-  # root 'welcome#home'
+  root 'welcome#home'
   get '/signup', to: 'users#new'
   get '/search', to: 'preferences#index'
   get    '/signin',   to: 'sessions#new'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/underoofadmin', to: 'admin#admins'
 
-  root controller: :rooms, action: :index
+  get '/chat', to: 'rooms#index'
 
   resources :room_messages
   resources :rooms
