@@ -11,7 +11,7 @@ class User < ApplicationRecord
     validates :password, presence: {message: "is a combination of uppercase letters, lowercase letters, and numbers. And the length is 8-15"}, format: { with: VALID_PASSWORD_REGEX },
                 allow_nil: true
 
-    has_one :preference 
+    has_one :preference, dependent: :destroy
 
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
