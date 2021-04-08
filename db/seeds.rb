@@ -20,7 +20,7 @@ CSV.foreach(Rails.root.join("app/assets/csv/cities.csv")) do |row|
 end
 p "Created #{City.count} cities"
 
-100.times do |index|
+500.times do |index|
     User.create!(name: Faker::Name.unique.name,
                   password: Faker::Internet.password(min_length: 8, max_length: 10, mix_case: true) + Faker::Number.binary(digits: 4),
                   email: Faker::Internet.email,
@@ -28,7 +28,7 @@ p "Created #{City.count} cities"
 end
 p "Created #{User.count} users"
 
-100.times do |index|
+500.times do |index|
     curr_state_id = State.all.sample.id
     curr_city_id = City.where(state_id: curr_state_id).sample.id
     Preference.create!(state_id: curr_state_id, city_id: curr_city_id,

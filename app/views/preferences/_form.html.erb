@@ -3,7 +3,7 @@
     <%= f.hidden_field :sort, value: params[:sort] %>
 
     <%= f.label :state_label, "State" %>
-    <%= f.select :state, options_for_select(CS.states(:us).invert, params[:state])%>
+    <%= f.select :state, options_for_select(CS.states(:us).except(:DC).invert, params[:state])%>
 
     <%= f.label :county_label, "City" %>
     <%= f.select :city, options_for_select({}, params[:city]) %>

@@ -34,7 +34,7 @@ class PreferencesController < ApplicationController
             @preferences = @preferences.where("pet = ?", "#{params[:pet]}")
         end
         @count = @preferences.count
-        @preferences = @preferences.order(sort_column + " " + sort_direction).paginate(:per_page=>30, :page=>params[:page])
+        @preferences = @preferences.order(sort_column + " " + sort_direction).paginate(:per_page=>10, :page=>params[:page])
     end
 
     def show
