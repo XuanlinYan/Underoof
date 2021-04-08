@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_005223) do
+ActiveRecord::Schema.define(version: 2021_04_08_025409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,23 @@ ActiveRecord::Schema.define(version: 2021_04_06_005223) do
     t.index ["user_id"], name: "index_preferences_on_user_id"
   end
 
+  create_table "room_messages", force: :cascade do |t|
+    t.bigint "room_id", null: false
+    t.bigint "user_id", null: false
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_room_messages_on_room_id"
+    t.index ["user_id"], name: "index_room_messages_on_user_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_rooms_on_name", unique: true
+  end
+
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.string "two_digit_code"
@@ -63,9 +80,13 @@ ActiveRecord::Schema.define(version: 2021_04_06_005223) do
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "condition_id"
     t.string "password_digest"
+    t.index ["condition_id"], name: "index_users_on_condition_id"
   end
 
   add_foreign_key "cities", "counties"
   add_foreign_key "counties", "states"
+  add_foreign_key "room_messages", "rooms"
+  add_foreign_key "room_messages", "users"
 end

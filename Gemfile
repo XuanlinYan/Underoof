@@ -64,3 +64,10 @@ gem 'will_paginate', '~> 3.1.1'
 gem 'kaminari'
 gem 'rails_admin', '~> 2.0'
 gem 'rails-controller-testing'
+
+gem 'jquery-rails'
+gem 'simple_form'
+gem 'redis'
+
+gem 'devise'
+gem 'devise-token_authenticatable'
