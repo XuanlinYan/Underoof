@@ -1,6 +1,25 @@
 class PreferencesController < ApplicationController
     before_action :authorize
     helper_method :sort_column, :sort_direction
+
+    def new
+        @preference = current_user.build_preference
+    end
+
+    def create
+        state_id = State.where("two_digit_code = ?", params[:state]).ids[0]
+        city_id = State.find(state_id).cities.where("name = ?", params[:city]).ids[0]
+        @preference = current_user.build_preference(preference_params)
+        @preference.state_id = state_id
+        @preference.city_id = city_id
+        if @preference.save
+          flash[:success] = "Preference created!"
+          redirect_to new_preference_path
+        else
+          render "new"
+        end
+    end
+    
     def index
         @preferences = Preference.all()
 
@@ -42,6 +61,11 @@ class PreferencesController < ApplicationController
     end
 
     private
+
+    def preference_params
+        params.require(:preference).permit(:location, :min_price, :max_price, :start_date, :end_date, :pet)
+    end
+
     def sort_column
         (Preference.column_names-["pet", "user.name"]).include?(params[:sort]) ? params[:sort] : "min_price"
     end

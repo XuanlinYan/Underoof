@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/underoofadmin', to: 'admin#admins'
   get 'cities/:state', to: 'application#cities'
+  get '/profile', to: 'static_pages#profile'
 end

@@ -2,11 +2,7 @@
     <%= f.hidden_field :direction, value: params[:direction] %>
     <%= f.hidden_field :sort, value: params[:sort] %>
 
-    <%= f.label :state_label, "State" %>
-    <%= f.select :state, options_for_select(CS.states(:us).except(:DC).invert, params[:state])%>
-
-    <%= f.label :county_label, "City" %>
-    <%= f.select :city, options_for_select({}, params[:city]) %>
+    <%= render "state_city_select"%>
 
     <%= f.label "Min Price"%>
     <%= f.number_field :min_price, in: 0..2500, step: 1, value: params[:min_price]%>
@@ -23,5 +19,5 @@
     <%= f.label "Pet Preference"%>
     <%= f.select :pet,["Dog", "Cat", "No"], selected: params[:pet], include_blank: true %>
     
-    <%= f.submit "Search"%>
+    <%= f.submit yield(:button_text)%>
 <% end %>

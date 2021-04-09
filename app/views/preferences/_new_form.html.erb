@@ -1,0 +1,33 @@
+<%= form_with(model: @preference, local: true) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <%= render "state_city_select"%>
+    <%if false%>
+    <%= label_tag "State"%>
+    <%= text_field_tag :state_name %>
+
+    <%= label_tag "City"%>
+    <%= text_field_tag :city_name %>
+    <%end%>
+
+    <%= f.label "Location"%>
+    <%= f.text_area  :location, value: params[:location]%>
+
+    <%= f.label "Min Price"%>
+    <%= f.number_field :min_price, value: params[:min_price]%>
+
+    <%= f.label "Max Price"%>
+    <%= f.number_field :max_price, value: params[:max_price]%>
+
+    <%= f.label "Start Date"%>
+    <%= f.date_field :start_date, value: params[:start_date] %>
+
+    <%= f.label "End Date"%>
+    <%= f.date_field :end_date, value: params[:end_date] %>
+
+    <%= f.label "Pet Preference"%>
+    <%= f.select :pet,["Dog", "Cat", "No"], selected: params[:pet], include_blank: true, selected: params[:pet] %>
+    
+    <%= f.submit yield(:button_text)%>
+<% end %>
