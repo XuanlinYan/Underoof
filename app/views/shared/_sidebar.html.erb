@@ -3,8 +3,8 @@
 </div>
 <div class = "row">
     <%if current_user.preference.nil?%>
-    <%= link_to "Room Preference", new_preference_path%>
-    <%else%>
-    <%= link_to "Room Preference", "#"%>
+        <%= link_to "Room Preference", new_preference_path%>
+    <% else %>
+        <%= link_to "Room Preference", edit_preference_path(current_user.preference)%>
     <%end%>
 </div>

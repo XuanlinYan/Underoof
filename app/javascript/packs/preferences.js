@@ -4,6 +4,8 @@ $("#state").change(function () {
   console.log("state changed")
   input_state = $(this)
   cities_of_state = $('#city');
+  var urlParams = new URLSearchParams(window.location.search);
+  console.log("Params are:", urlParams)
   $.ajax({
       url: '/cities/' + input_state.val(),
       success: function(data) {
