@@ -64,8 +64,8 @@ To get a local copy up and running follow these simple example steps.
 
 #### Search Page
 * Only signed in/up users could search
-* Users could search pages with state, county, city(not implemenmted yet), min price, max price, start date, end date and pet prefernce
-* The content of County drop down menu is different based on which State is selected
+* Users could search pages with state, city, min price, max price, start date, end date and pet prefernce
+* The content of city drop down menu is different based on which State is selected
 * Search results could be sorted by min price, max price, start date and end date
 * Default sort column is min price and default sort direction is asc
 * Users could view details of each search result by clicking on "show" button
@@ -112,16 +112,13 @@ To get a local copy up and running follow these simple example steps.
 ## Database Schema
 ### Models
 * users(name: string, email:string, gender:string, password_digest:string)
-* preferences(location: string, start_date: date, end_date:date, min_price: integer, max_price: integer, pet: string, user_id: foreign key referring id in users, state_id: foreign key referring id in states, county_id: foreign key referring id in counties, city_id: foreign key referring id in cities)
+* preferences(location: string, start_date: date, end_date:date, min_price: integer, max_price: integer, pet: string, user_id: foreign key referring id in users, state_id: foreign key referring id in states city_id: foreign key referring id in cities)
 * states(name: string, two_digit_code:string )
-* counties(name: string, state_id: foreign key referring id in states)
-* cities(name: string, county_id: foreign key referring id in counties)
+* cities(name: string, state_id: foreign key referring id in states)
 ### Assotiations
 * User <-> Preference (one to one)
-* State -> County (one to many)
-* County -> City (one to many)
+* State -> City (one to many)
 * State -> Preference (one to many)
-* County -> Preference (one to many) 
 * City -> Preference (one to many)
 
 ## Planned Views
@@ -144,6 +141,6 @@ To get a local copy up and running follow these simple example steps.
 * [Bcrypt](https://github.com/bcrypt-ruby/bcrypt-ruby)
 * [Rails_admin](https://github.com/sferik/rails_admin)
 * [Rails-controller-testing](https://github.com/rails/rails-controller-testing)
-* [jQuery](https://www.botreetechnologies.com/blog/introducing-jquery-in-rails-6-using-webpacker)\
-* [Coffeescript](https://bloggie.io/@kinopyo/rails-enable-coffeescript-with-webpacker)
+* [jQuery](https://www.botreetechnologies.com/blog/introducing-jquery-in-rails-6-using-webpacker)
+* [city-state](https://github.com/loureirorg/city-state)
 
