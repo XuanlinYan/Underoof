@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CountyTest < ActiveSupport::TestCase
+class StaticPageControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

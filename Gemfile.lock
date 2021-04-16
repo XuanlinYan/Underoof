@@ -87,6 +87,8 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (3.0.0)
+    city-state (0.1.0)
+      rubyzip (>= 1.1)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     devise (4.7.3)
@@ -293,6 +295,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   devise-token_authenticatable
+  city-state
   faker
   jbuilder (~> 2.7)
   jquery-rails

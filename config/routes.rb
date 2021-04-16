@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :room_messages
   resources :rooms
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :preferences
+  resources :preferences, except: :index
   resources :users
   resources :sessions
   
@@ -13,9 +13,10 @@ Rails.application.routes.draw do
   post   '/signin',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/underoofadmin', to: 'admin#admins'
-
+  
   get '/chat', to: 'rooms#index'
 
   resources :room_messages
   resources :rooms
+  get 'cities/:state', to: 'application#cities'
 end

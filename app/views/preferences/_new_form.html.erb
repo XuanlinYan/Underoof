@@ -1,0 +1,38 @@
+<%= form_with(model: @preference, local: true) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <div class="form-group">
+    <%= render "state_city_select"%>
+    </div>
+
+    <div class="form-group">
+    <%= f.label "Location"%>
+    <%= f.text_field  :location %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label "Min Price"%>
+    <%= f.number_field :min_price, required: true %>
+
+    <%= f.label "Max Price"%>
+    <%= f.number_field :max_price, required: true %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label "Start Date"%>
+    <%= f.date_field :start_date %>
+
+    <%= f.label "End Date"%>
+    <%= f.date_field :end_date %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label "Pet Preference"%>
+    <%= f.select :pet,["Dog", "Cat", "No"], include_blank: true%>
+    </div>
+
+    <div class="form-group">
+    <%= f.submit yield(:button_text)%>
+    </div>
+<% end %>

@@ -71,3 +71,5 @@ gem 'redis'
 
 gem 'devise'
 gem 'devise-token_authenticatable'
+
+gem 'city-state'
