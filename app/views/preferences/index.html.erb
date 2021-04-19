@@ -1,0 +1,50 @@
+<% provide(:button_text, 'Search') %>
+<br>
+  <%= render 'form'%>
+<br>
+<div class="container">
+  <div class="row">
+    <p class="text-left">total results: <%= @count%></p>
+  </div>
+
+  <div class="row">
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>State</th>
+            <th>City</th>
+            <th><%= sortable "min_price"%></th>
+            <th><%= sortable "max_price"%></th>
+            <th><%= sortable "start_date"%></th>
+            <th><%= sortable "end_date"%></th>
+            <th>Pet Preference</th>
+            <th>Details</th>
+        </tr>
+      </thead>
+
+      <tbody>
+            <%  @preferences.each do |p| %>
+            <tr>
+                <td><%= p.user.name %></td>
+                <td><%= p.state.name %></td>
+                <td><%= p.city.name %></td>
+                <td><%= p.min_price %></td>
+                <td><%= p.max_price %></td>
+                <td><%= p.start_date %></td>
+                <td><%= p.end_date %></td>
+                <td><%= p.pet %></td>
+                <td><%= link_to "show", preference_path(p)%></td>
+            </tr>
+            
+        <% end %> 
+      </tbody>
+    </table>
+  </div>
+  <div class="row" id="nav-bar">
+    <div class="col-md-12" >
+      <%= will_paginate @preferences, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, 
+      list_classes: %w(pagination justify-content-center) %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<section class="home-form">
+<%= render 'form'%>
+</section>
+
+<% if !logged_in?%>
+<%= link_to "Sign up now!", signup_path%>
+<% end %>

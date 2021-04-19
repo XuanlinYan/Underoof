@@ -1,0 +1,6 @@
+<%= label_tag "State" %>
+<%= select_tag :state, options_for_select(CS.states(:us).except(:DC).invert, params[:state])%>
+
+
+<%= label_tag :county_label, "City" %>
+<%= select_tag :city, options_for_select({}, params[:city]) %>
