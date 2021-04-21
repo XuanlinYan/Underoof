@@ -1,3 +1,4 @@
+<% if 5==3%>
 <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
     <%= link_to "Home", "/", id:"home"%>
     <ul class="navbar-nav ml-auto">
@@ -14,4 +15,50 @@
             <li class="nav-link"><%= link_to 'Sign in', signin_path%></li>
         <% end %>
     </ul>  
+</nav>
+<%end%>
+
+<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
+			<div class="container">
+				<div class="logo">
+					<a>
+						<img src="assets/img/logo.png">
+					</a>
+				</div>
+			    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			        <span class="navbar-toggler-icon"></span>
+			    </button>
+			    <div class="collapse navbar-collapse" id="navbarNav">
+			        <ul class="navbar-nav ml-auto">
+			            <li class="nav-item">
+			                <a class="nav-link scroll-link" href="#top-content">Top</a>
+			            </li>
+			            <li class="nav-item">
+			                <a class="nav-link scroll-link" href="#section-1">Item 1</a>
+			            </li>
+			            <li class="nav-item">
+			                <a class="nav-link scroll-link" href="#section-2">Item 2</a>
+			            </li>
+			            <%# <li class="nav-item">
+			                <a class="nav-link scroll-link" href="#section-3">Item 3</a>
+			            </li>
+			            <li class="nav-item">
+			                <a class="nav-link scroll-link" href="#section-4">Item 4</a>
+			            </li> %>
+						 <% if logged_in? and admin_user?%>
+							<li class="nav-link"><%= link_to 'Search', search_path, method: :get %></li>
+							<li class="nav-link"><%= link_to 'Data', underoofadmin_path, method: :get %></li>
+							<li class="nav-link"><%= link_to 'Log out', logout_path, method: :delete %></li>
+						<% elsif logged_in? and !admin_user?%>
+							<li class="nav-link"><%= link_to 'Search', search_path, method: :get %></li>
+							<li class="nav-link"><%= link_to 'Profile', edit_user_path(current_user) %></li>
+							<li class="nav-link"><%= link_to 'Log out', logout_path, method: :delete %></li>
+						<% else %>
+							<button class="round-shape"><%= link_to 'Sign Up', signup_path%></button>  
+							<button class="round-shape"><%= link_to 'Sign In', signin_path%></button>
+						<% end %>
+
+			        </ul>
+			    </div>
+		    </div>
 </nav>
