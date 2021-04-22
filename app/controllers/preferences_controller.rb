@@ -25,6 +25,8 @@ class PreferencesController < ApplicationController
     
     def edit
         @preference = Preference.find(params[:id])
+        @old_state = @preference.state.name
+        @old_city = @preference.city.name
     end
 
     def update

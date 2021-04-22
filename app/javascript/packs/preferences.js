@@ -1,5 +1,4 @@
 console.log("hello")
-console.log($(location).attr('href'))
 
 $(document).on('turbolinks:load', function() {
 
@@ -31,8 +30,6 @@ $("#state").change(function () {
           localStorage.setItem("city", opt);
         }
       }
-    });
-
-    
+    }); 
 });
 });
