@@ -12,8 +12,7 @@ strong {
 }
 
 a {
-  color: #a365bc;
-  border-bottom: 1px dashed #a365bc;
+
   text-decoration: none;
   transition: all 0.3s;
 }
