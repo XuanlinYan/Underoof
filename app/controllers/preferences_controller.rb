@@ -1,7 +1,7 @@
 class PreferencesController < ApplicationController
     before_action :authorize
     helper_method :sort_column, :sort_direction
-    before_action :correct_preference, only: [:new, :create, :edit, :update]
+    before_action :correct_preference, only: [:edit, :update]
 
     def new
         @preference = Preference.new
