@@ -13,6 +13,10 @@ class User < ApplicationRecord
 
     has_one :preference, dependent: :destroy
 
+    has_many :channel_users, dependent: :destroy
+    has_many :channels, through: :channel_users
+    has_many :messages, dependent: :destroy
+
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                       BCrypt::Engine.cost
