@@ -32,47 +32,10 @@ ActiveRecord::Schema.define(version: 2021_04_23_091521) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.bigint "county_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["county_id"], name: "index_cities_on_county_id"
-  end
-
-  create_table "counties", force: :cascade do |t|
-    t.string "name"
     t.bigint "state_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["state_id"], name: "index_counties_on_state_id"
-  end
-
-  create_table "courses", force: :cascade do |t|
-    t.boolean "independent_study"
-    t.string "name"
-    t.string "code"
-    t.float "credits"
-    t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "coursesubjects", force: :cascade do |t|
-    t.bigint "course_id"
-    t.bigint "subject_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["course_id"], name: "index_coursesubjects_on_course_id"
-    t.index ["subject_id"], name: "index_coursesubjects_on_subject_id"
-  end
-
-  create_table "instructors", force: :cascade do |t|
-    t.integer "instructor_id"
-    t.string "first"
-    t.string "middle"
-    t.string "last"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -96,42 +59,15 @@ ActiveRecord::Schema.define(version: 2021_04_23_091521) do
     t.string "pet"
     t.bigint "user_id"
     t.bigint "state_id"
-    t.bigint "county_id"
     t.bigint "city_id"
     t.index ["city_id"], name: "index_preferences_on_city_id"
-    t.index ["county_id"], name: "index_preferences_on_county_id"
     t.index ["state_id"], name: "index_preferences_on_state_id"
     t.index ["user_id"], name: "index_preferences_on_user_id"
-  end
-
-  create_table "room_messages", force: :cascade do |t|
-    t.bigint "room_id", null: false
-    t.bigint "user_id", null: false
-    t.text "message"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["room_id"], name: "index_room_messages_on_room_id"
-    t.index ["user_id"], name: "index_room_messages_on_user_id"
-  end
-
-  create_table "rooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.string "two_digit_code"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "subjects", force: :cascade do |t|
-    t.string "name"
-    t.string "abbreviation"
-    t.string "suject_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -142,17 +78,12 @@ ActiveRecord::Schema.define(version: 2021_04_23_091521) do
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "condition_id"
     t.string "password_digest"
-    t.index ["condition_id"], name: "index_users_on_condition_id"
   end
 
   add_foreign_key "channel_users", "channels"
   add_foreign_key "channel_users", "users"
-  add_foreign_key "cities", "counties"
-  add_foreign_key "counties", "states"
+  add_foreign_key "cities", "states"
   add_foreign_key "messages", "channels"
   add_foreign_key "messages", "users"
-  add_foreign_key "room_messages", "rooms"
-  add_foreign_key "room_messages", "users"
 end

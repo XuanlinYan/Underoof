@@ -1,5 +1,5 @@
 class ChannelUsersController < ApplicationController
-    # before_action :authorize
+    before_action :authorize
     before_action :set_channel
 
     def create
