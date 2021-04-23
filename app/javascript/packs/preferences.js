@@ -1,11 +1,20 @@
 console.log("hello")
+
 $(document).on('turbolinks:load', function() {
+
+  var selected_state = localStorage.getItem("state")
+  $("#state").val(selected_state)
+  var selected_city = localStorage.getItem("city")
+  $("#city").html(selected_city)
+
 $("#state").change(function () {
-  console.log("state changed")
+  var temp_selected_state = $("#state").val();
+  localStorage.setItem("state", temp_selected_state);
+
+
   input_state = $(this)
   cities_of_state = $('#city');
-  var urlParams = new URLSearchParams(window.location.search);
-  console.log("Params are:", urlParams)
+ 
   $.ajax({
       url: '/cities/' + input_state.val(),
       success: function(data) {
@@ -18,8 +27,9 @@ $("#state").change(function () {
             opt += '<option value="' + i + '">' + i + '</option>';
           });
           cities_of_state.html(opt);
+          localStorage.setItem("city", opt);
         }
       }
-    });
+    }); 
 });
 });

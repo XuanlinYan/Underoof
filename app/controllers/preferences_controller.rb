@@ -1,7 +1,7 @@
 class PreferencesController < ApplicationController
     before_action :authorize
     helper_method :sort_column, :sort_direction
-    before_action :correct_preference, only: [:new, :create, :edit, :update]
+    before_action :correct_preference, only: [:edit, :update]
 
     def new
         @preference = Preference.new
@@ -25,6 +25,8 @@ class PreferencesController < ApplicationController
     
     def edit
         @preference = Preference.find(params[:id])
+        @old_state = @preference.state.name
+        @old_city = @preference.city.name
     end
 
     def update
