@@ -66,3 +66,4 @@ gem 'rails_admin', '~> 2.0'
 gem 'rails-controller-testing'
 
 gem 'city-state'
+gem 'font-awesome-sass', '~> 5.6', '>= 5.6.1'

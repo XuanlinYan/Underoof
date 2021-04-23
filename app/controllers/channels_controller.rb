@@ -1,4 +1,5 @@
 class ChannelsController < ApplicationController
+  # before_action :authorize, except: [:index]
   before_action :set_channel, only: %i[ show edit update destroy ]
 
   # GET /channels or /channels.json

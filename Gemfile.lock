@@ -96,6 +96,8 @@ GEM
     faker (2.17.0)
       i18n (>= 1.6, < 2)
     ffi (1.15.0)
+    font-awesome-sass (5.6.1)
+      sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.2.1)
@@ -277,6 +279,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   city-state
   faker
+  font-awesome-sass (~> 5.6, >= 5.6.1)
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.3)
