@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :channels
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :preferences, except: :index
   resources :users
