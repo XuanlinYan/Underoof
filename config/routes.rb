@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   
-  # root 'welcome#home'
-  root 'channels#index'
+  root 'welcome#home'
+  # root 'channels#index'
   get '/signup', to: 'users#new'
   get '/search', to: 'preferences#index'
   get    '/signin',   to: 'sessions#new'

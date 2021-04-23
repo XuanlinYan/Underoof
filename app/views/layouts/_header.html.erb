@@ -18,21 +18,22 @@
 </nav>
 <%end%>
 
-<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
+<nav class="navbar navbar-dark navbar-expand-md navbar-no-bg">
 	<div class="container">
 		<div class="logo">
-			<a>
+			<a href="/">
 				<img src="assets/img/logo.png">
 			</a>
 		</div>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
-		</button>
+		</button> %>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
+				<% if request.original_url == root_url %>
+				<%# <li class="nav-item">
 					<a class="nav-link scroll-link" href="#top-content">Top</a>
-				</li>
+				</li> %>
 				<li class="nav-item">
 					<a class="nav-link scroll-link" href="#section-1">Features</a>
 				</li>
@@ -42,9 +43,7 @@
 				<li class="nav-item">
 					<a class="nav-link scroll-link" href="#section-3">Testimonials</a>
 				</li>
-				<%# <li class="nav-item">
-					<a class="nav-link scroll-link" href="#section-4">Item 4</a>
-				</li>  %>
+				<%end%>
 					<% if logged_in? and admin_user?%>
 					<button class="round-shape btn  button-lock"><%= link_to 'Search', search_path, method: :get %></button>
 					<button class="round-shape btn  button-lock"> class="nav-link"><%= link_to 'Data', underoofadmin_path, method: :get %></button>
@@ -57,7 +56,6 @@
 					<button class="round-shape btn  button-lock"><%= link_to 'Sign Up', signup_path%></button>  
 					<button class="round-shape btn  button-lock"><%= link_to 'Sign In', signin_path%></button>
 				<% end %>
-
 			</ul>
 		</div>
 	</div>

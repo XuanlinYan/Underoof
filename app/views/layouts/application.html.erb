@@ -12,26 +12,23 @@
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/media-queries.css">
-       
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'preferences', 'data-turbolinks-track': 'reload' %>
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
+   
   </head>
 
-  <body>
-    <%= render 'layouts/header', user: @user%>
-    <div class="container-md">
+  <body class="m-0">
+    <div class="container-fluid">
       <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <div class="alert alert-<%= message_type %> text-center align-center"><%= message %></div>
       <% end %>
+      <%= render 'layouts/header', user: @user%>
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
-    <%= render 'layouts/footer' %>
+    
 
     <!-- Javascript Added by template-->
 		<script src="assets/js/jquery-3.3.1.min.js"></script>
