@@ -22,7 +22,7 @@
 	<div class="container">
 		<div class="logo">
 			<a href="/">
-				<img src="assets/img/logo.png">
+				<img src="/assets/img/logo.png">
 			</a>
 		</div>
 		<%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
 				<%end%>
 					<% if logged_in? and admin_user?%>
 					<button class="round-shape btn  button-lock"><%= link_to 'Search', search_path, method: :get %></button>
-					<button class="round-shape btn  button-lock"> class="nav-link"><%= link_to 'Data', underoofadmin_path, method: :get %></button>
+					<button class="round-shape btn  button-lock"><%= link_to 'Data', underoofadmin_path, method: :get %></button>
 					<button class="round-shape btn  button-lock"><%= link_to 'Log out', logout_path, method: :delete %></button>
 				<% elsif logged_in? and !admin_user?%>
 					<button class="round-shape btn  button-lock"><%= link_to 'Search', search_path, method: :get %></button>
