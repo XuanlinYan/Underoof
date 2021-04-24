@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
   resources :channels do
     resource :channel_user
+    resources :messages
   end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :preferences, except: :index
   resources :users
   resources :sessions
   
-  root 'welcome#home'
-  # root 'channels#index'
+  # root 'welcome#home'
+  root 'channels#index'
   get '/signup', to: 'users#new'
   get '/search', to: 'preferences#index'
   get    '/signin',   to: 'sessions#new'
