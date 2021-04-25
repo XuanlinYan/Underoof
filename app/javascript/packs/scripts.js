@@ -22,18 +22,18 @@ jQuery(document).ready(function() {
 		scroll_to($(this), $('nav').outerHeight());
 	});
 	// toggle "navbar-no-bg" class
-	$('.top-content .carousel-caption').waypoint(function() {
-		$('nav').toggleClass('navbar-no-bg');
-	});
+	// $('.top-content .carousel-caption').waypoint(function() {
+	// 	$('nav').toggleClass('navbar-no-bg');
+	// });
 	
     /*
         Background slideshow
     */
-    $('.section-4-container').backstretch("assets/img/backgrounds/2.jpg");
+    // $('.section-4-container').backstretch("assets/img/backgrounds/2.jpg");
     
-    /*
-	    Wow
-	*/
-	new WOW().init();
+    // /*
+	//     Wow
+	// */
+	// new WOW().init();
 	
 });

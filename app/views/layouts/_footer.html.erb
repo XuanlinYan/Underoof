@@ -9,7 +9,8 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-3 text-md-left text-center">
-                  <img class="rounded-circle" src="/assets/img/backgrounds/about_us.jpg" width="w-75 p-3" alt="our picture">
+                  <%# <img class="rounded-circle" src="/assets/img/backgrounds/about_us.jpg" width="w-75 p-3" alt="our picture"> %>
+                  <%= image_tag("about_us.jpg", alt: "logo.png",width:"w-75 p-3", class: "rounded-circle")%>
                 </div>
                 <div class="col-md-9 text-md-left text-center">
                   <p class="lead">"Since the beginning of 2021, we have been making consistent contributions to this application. Your support will be critical to our development." </p>
