@@ -1,3 +1,27 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.title{
+    font-family: "Alfa Slab One";
+}
+
+
+.errspan {    
+  float: right;
+  top: 24px;
+  right: 6px;
+  position: relative;
+  z-index: 2;
+  color: grey;
+}
+
+.container.im-bg{
+    background-image: 
+    url("https://i.postimg.cc/XJwXtv7F/nicontents-kpecd-Edz-MWU-unsplash-1.jpg");
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    border: 0;
+    margin-top: 0%;
+  }

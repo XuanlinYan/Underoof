@@ -1,0 +1,16 @@
+<div>
+<h3 class="show-title">Roommate Personal Information</h3>
+<span class="fa fa-address-card span-icon"> Name: <%= @preference.user.name%></span><br><br>
+<span class="fa fa-venus-mars span-icon"> Gender: <%= @preference.user.gender%></span><br><br>
+<span class="fa fa-envelope span-icon"> Email: <%= @preference.user.email%></span><br><br>
+
+
+<h3 class="show-title">Roommate Preferences</h3>
+<p class="info">State: <%= State.find(@preference.state_id).name%></p>
+<p class="info">City: <%= City.find(@preference.city_id).name%></p>
+<p class="info">Location: <%= @preference.location%></p>
+<p class="info">Price: $<%= @preference.min_price%> - $<%= @preference.max_price%></p>
+<p class="info">Date: <%= @preference.start_date%> - <%= @preference.end_date%></p>
+<p class="info">Pet preference: <%= @preference.pet%></p>
+<%= link_to "Let's chat!", "#",class:"btn btn-dark" %>
+</div>

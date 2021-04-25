@@ -1,3 +1,5 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
 // Place all the styles related to the preferences controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
@@ -5,4 +7,26 @@
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+}
+
+.errspan {    
+    float: right;
+    top: 24px;
+    right: 6px;
+    position: relative;
+    z-index: 2;
+    color: grey;
+  }
+
+h3.show-title{
+    font-family: "Bitstream Vera Sans Bold";
+    font-size: 300%;
+}
+
+.span-icon{
+   font-size: 150%;
+}
+.info{
+    font-weight: bold;
+    font-size: 150%;
 }
