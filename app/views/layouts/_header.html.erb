@@ -1,28 +1,8 @@
-<% if 5==3%>
-<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
-    <%= link_to "Home", "/", id:"home"%>
-    <ul class="navbar-nav ml-auto">
-        <% if logged_in? and admin_user?%>
-            <li class="nav-link"><%= link_to 'Search', search_path, method: :get %></li>
-            <li class="nav-link"><%= link_to 'Data', underoofadmin_path, method: :get %></li>
-            <li class="nav-link"><%= link_to 'Log out', logout_path, method: :delete %></li>
-        <% elsif logged_in? and !admin_user?%>
-            <li class="nav-link"><%= link_to 'Search', search_path, method: :get %></li>
-            <li class="nav-link"><%= link_to 'Profile', edit_user_path(current_user) %></li>
-            <li class="nav-link"><%= link_to 'Log out', logout_path, method: :delete %></li>
-        <% else %>
-            <li class="nav-link"><%= link_to 'Sign up', signup_path%></li>  
-            <li class="nav-link"><%= link_to 'Sign in', signin_path%></li>
-        <% end %>
-    </ul>  
-</nav>
-<%end%>
-
-<nav class="navbar navbar-dark navbar-expand-md navbar-no-bg">
+<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
 	<div class="container">
 		<div class="logo">
 			<a href="/">
-				<img src="assets/img/logo.png">
+				<%= image_tag("logo.png", alt: "logo")%>
 			</a>
 		</div>
 		<%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,9 +11,6 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
 				<% if request.original_url == root_url %>
-				<%# <li class="nav-item">
-					<a class="nav-link scroll-link" href="#top-content">Top</a>
-				</li> %>
 				<li class="nav-item">
 					<a class="nav-link scroll-link" href="#section-1">Features</a>
 				</li>
@@ -44,17 +21,34 @@
 					<a class="nav-link scroll-link" href="#section-3">Testimonials</a>
 				</li>
 				<%end%>
-					<% if logged_in? and admin_user?%>
-					<button class="round-shape btn  button-lock"><%= link_to 'Search', search_path, method: :get %></button>
-					<button class="round-shape btn  button-lock"> class="nav-link"><%= link_to 'Data', underoofadmin_path, method: :get %></button>
-					<button class="round-shape btn  button-lock"><%= link_to 'Log out', logout_path, method: :delete %></button>
+				
+				<% if logged_in? and admin_user?%>
+					<li class= "nav-item">
+						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Search', search_path, method: :get %></button>
+					</li>
+					<li class= "nav-item">
+						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Data', underoofadmin_path, method: :get %></button>
+					</li>
+					<li class= "nav-item">
+						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Log out', logout_path, method: :delete %></button>
+					</li>	
 				<% elsif logged_in? and !admin_user?%>
-					<button class="round-shape btn  button-lock"><%= link_to 'Search', search_path, method: :get %></button>
-					<button class="round-shape btn  button-lock"><%= link_to 'Profile', edit_user_path(current_user) %></button>
-					<button class="round-shape btn  button-lock"><%= link_to 'Log out', logout_path, method: :delete %></button>
+					<li class= "nav-item">
+						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Search', search_path, method: :get %></button>
+					</li>
+					<li class= "nav-item">
+						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Profile', edit_user_path(current_user) %></button>
+					</li>
+					<li class= "nav-item">
+						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Log out', logout_path, method: :delete %></button>
+					</li>
 				<% else %>
-					<button class="round-shape btn  button-lock"><%= link_to 'Sign Up', signup_path%></button>  
-					<button class="round-shape btn  button-lock"><%= link_to 'Sign In', signin_path%></button>
+					<li class= "nav-item">
+						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Sign Up', signup_path%></button>
+					</li>
+					<li class= "nav-item">  
+						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Sign In', signin_path%></button>
+					</li>
 				<% end %>
 			</ul>
 		</div>

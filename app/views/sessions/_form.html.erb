@@ -1,9 +1,6 @@
 <div class="row">
-    <br><br><br>
-</div>
-<div class="row">
-    <div class="col-3"></div>
-    <div class="col-6">
+    <div class="col align-self-start"></div>
+    <div class="col-md-8 align-self-center">
         <%= form_with(url: signin_path, scope: :session, local: true) do |f| %>
             <div class="form-group form-icons">
                 <span class="fa fa-envelope errspan"></span>
@@ -17,10 +14,5 @@
             <%= f.submit "Sign in", class: "btn btn-dark col" %>
         <% end %>
     </div>
-    <div class="col-3"></div>
-</div>
-<div class="row">
-    <br><br><br>
-    <br><br><br>
-    <br>
+    <div class="col align-self-end"></div>
 </div>
