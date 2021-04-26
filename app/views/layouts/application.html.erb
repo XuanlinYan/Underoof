@@ -19,17 +19,17 @@
    
   </head>
 
-  <body >
-  <%= render 'layouts/header'%> 
+  <body>
+    <%= render 'layouts/header'%>
+ 
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %> text-center align-center" ><%= message %></div>
+    <% end %>
+    <div class = "container-fluid">
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
 
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %> text-center align-center" ><%= message %></div>
-  <% end %>
-  
-  <%= yield %>
-  <%= render 'layouts/footer' %>
-   
-    
 
     <!-- Javascript Added by template-->
 		<%# <script src="/assets/js/jquery-3.3.1.min.js"></script>
@@ -47,21 +47,13 @@
     <%= javascript_pack_tag 'wow', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'waypoints', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'scripts', 'data-turbolinks-track': 'reload' %>
-    
-    
-    
-    
-    
-    
+
     <!-- Js added for cities slider-->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <%# <script src="/assets/js/my_slide.js"></script> %>
     <%= javascript_pack_tag 'my_slide', 'data-turbolinks-track': 'reload' %>
-    
-    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     
-
   </body>
 </html>
