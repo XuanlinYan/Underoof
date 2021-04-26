@@ -19,15 +19,16 @@
    
   </head>
 
-  <body class="m-0">
-    <div class="container-fluid">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %> text-center align-center"><%= message %></div>
-      <% end %>
-      <%= render 'layouts/header'%>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-    </div>
+  <body >
+  <%= render 'layouts/header'%> 
+
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %> text-center align-center" ><%= message %></div>
+  <% end %>
+  
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+   
     
 
     <!-- Javascript Added by template-->
