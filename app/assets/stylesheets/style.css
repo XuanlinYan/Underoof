@@ -254,12 +254,15 @@ img {
 .features {
   display: grid;
   grid-template-columns: 2fr 2fr;
-  gap: 2rem;
+  gap: 5rem;
   margin: 0 8rem;
 }
 
 .features__img {
-  width: 75%;
+  width: 50%;
+  /* Make images align horizontal center */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .features__feature {
@@ -440,8 +443,22 @@ h2 {
   padding: 0 0 10px 0;
 }
 
+.section-4-container {
+  background-image: url("section_4.jpg");
+  background-size: 100%;
+}
+
 /***** Footer *****/
 
 footer {
   padding: 40px 0;
+  /* background-color: #5c5a5a; */
+}
+
+.white {
+  color: rgb(155, 151, 151);
+}
+
+.cusion{
+  height: 100px;
 }
