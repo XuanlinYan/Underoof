@@ -124,11 +124,11 @@ To get a local copy up and running follow these simple example steps.
 ## Planned Views
 * Sign up page(implemented)
 * Sign in page(implemented)
-* Home page(implemented part)
+* Home page(implemented)
 * Search page(implemented)
 * Search results details page(implemented)
-* Chat page(not implemented)
-* Profile page(implemented part)
+* Chat page(implemented)
+* Profile page(implemented)
 
 
 
