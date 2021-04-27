@@ -143,5 +143,5 @@ To get a local copy up and running follow these simple example steps.
 * [Rails-controller-testing](https://github.com/rails/rails-controller-testing)
 * [jQuery](https://www.botreetechnologies.com/blog/introducing-jquery-in-rails-6-using-webpacker)
 * [city-state](https://github.com/loureirorg/city-state)
-* [font-awesome-sass](https://github.com/FortAwesome/font-awesome-sass)
+* [font_awesome5_rails](https://github.com/tomkra/font_awesome5_rails)
 * [stimulus](https://stimulus.hotwire.dev/handbook/origin)
