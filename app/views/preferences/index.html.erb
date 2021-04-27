@@ -1,8 +1,9 @@
 <% provide(:button_text, 'Search') %>
-<br>
-  <%= render 'form'%>
-<br>
-<div class="container">
+
+<div class="container mt-2">
+  
+    <%= render 'form'%>
+
   <div class="row">
     <p class="text-left">total results: <%= @count%></p>
   </div>
@@ -41,8 +42,8 @@
       </tbody>
     </table>
   </div>
-  <div class="row" id="nav-bar">
-    <div class="col-md-12" >
+  <div class="row">
+    <div class="col-md-12">
       <%= will_paginate @preferences, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, 
       list_classes: %w(pagination justify-content-center) %>
     </div>

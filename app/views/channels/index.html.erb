@@ -2,7 +2,7 @@
 
 <h1>Channels</h1>
 
-<table>
+<table class="table table-hover table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,9 +14,9 @@
     <% @channels.each do |channel| %>
       <tr>
         <td><%= channel.name %></td>
-        <td><%= link_to 'Show', channel %></td>
-        <td><%= link_to 'Edit', edit_channel_path(channel) %></td>
-        <td><%= link_to 'Destroy', channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show Messages', channel %></td>
+        <td><%= link_to 'Edit Name', edit_channel_path(channel) %></td>
+        <td class="table-danger"><%= link_to 'Destroy', channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Channel', new_channel_path %>
+<button class="btn btn-secondary"><%= link_to 'New Channel', new_channel_path %></button>

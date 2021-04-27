@@ -5,9 +5,6 @@
 				<%= image_tag("logo.png", alt: "logo")%>
 			</a>
 		</div>
-		<%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button> %>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
 				<% if request.original_url == root_url %>
@@ -39,6 +36,9 @@
 					<li class= "nav-item">
 						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Profile', edit_user_path(current_user) %></button>
 					</li>
+					<li class= "nav-item">
+						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Chat', channels_path %></button>
+					</li>	
 					<li class= "nav-item">
 						<button class="round-shape btn  button-lock nav-link"><%= link_to 'Log out', logout_path, method: :delete %></button>
 					</li>
