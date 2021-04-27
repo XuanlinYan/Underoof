@@ -1,3 +1,4 @@
+<div class="row justify-content-md-center">
 <%= form_with(model: channel) do |form| %>
   <% if channel.errors.any? %>
     <div id="error_explanation">
@@ -11,12 +12,13 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control"%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-dark"%>
   </div>
 <% end %>
+</div>
