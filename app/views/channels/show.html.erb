@@ -2,14 +2,14 @@
   <div class="col-sm-2">
     <div class="d-flex justify-content-between">
       <h6>Channels</h6>
-      <%= link_to icon("fas", "plus"), new_channel_path %>
+      <%= link_to fa_icon("plus"), new_channel_path %>
     </div>
 
     <% Channel.all.each do |channel| %>
       <div>
         <%= link_to channel.name, channel %>
         <% if current_user.channels.include?(channel) %>
-          <%= link_to icon("fas", "times"), channel_channel_user_path(channel), method: :delete %>
+          <%= link_to fa_icon("times"), channel_channel_user_path(channel), method: :delete %>
         <% end %>
       </div>
     <% end %>
