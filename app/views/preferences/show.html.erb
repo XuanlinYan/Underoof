@@ -1,12 +1,5 @@
 <div class="row mt-3">
     <div class="col">
-    <h3 class="show-title">Personal Information</h3>
-    <%= fa_icon("address-card")%> Name:<%=  @preference.user.name%><br>
-    <%= fa_icon("venus-mars")%>Gender: <%= @preference.user.gender%></span><br>
-    <%= fa_icon("envelope")%> Email: <%= @preference.user.email%></span><br>
-    </div>
-
-    <div class="col">
     <h3 class="show-title">Room Preferences</h3>
     <p class="info">State: <%= State.find(@preference.state_id).name%></p>
     <p class="info">City: <%= City.find(@preference.city_id).name%></p>
@@ -14,6 +7,16 @@
     <p class="info">Price: $<%= @preference.min_price%> - $<%= @preference.max_price%></p>
     <p class="info">Date: <%= @preference.start_date%> - <%= @preference.end_date%></p>
     <p class="info">Pet preference: <%= @preference.pet%></p>
-    <div>
-    <%= link_to "Let's chat!", channels_path ,class:"btn btn-dark" %>
+    </div>
+
+    <div class="col">
+    <h3 class="show-title">Personal Information</h3>
+    <%= fa_icon("address-card")%> Name:<%=  @preference.user.name%><br>
+    <%= fa_icon("venus-mars")%>Gender: <%= @preference.user.gender%></span><br>
+    <%= fa_icon("envelope")%> Email: <%= @preference.user.email%></span><br>
+    </div>   
+</div>
+
+<div class="row justify-content-md-center">
+<%= link_to "Let's chat!", direct_message_path(@preference.user.id) ,class:"btn btn-dark" %>
 </div>

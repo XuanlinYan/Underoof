@@ -4,4 +4,22 @@ class Channel < ApplicationRecord
     has_many :messages, dependent: :destroy
 
     validates :name, presence: true
+
+    scope :public_channels, ->{ where(dm: false) }
+    scope :direct_messages, ->{ where(dm: true) }
+
+    def self.direct_message_for_users(users)
+        user_ids = users.map(&:id).sort
+        name = "DM:#{user_ids.join(":")}"
+
+        if channel = direct_messages.where(name: name).first
+            channel
+        else
+            # create a new chatroom
+            channel = new(name: name, dm: true)
+            channel.users = users
+            channel.save
+            channel
+        end
+    end
 end
