@@ -108,18 +108,24 @@ To get a local copy up and running follow these simple example steps.
 
 
 
-
 ## Database Schema
 ### Models
 * users(name: string, email:string, gender:string, password_digest:string)
 * preferences(location: string, start_date: date, end_date:date, min_price: integer, max_price: integer, pet: string, user_id: foreign key referring id in users, state_id: foreign key referring id in states city_id: foreign key referring id in cities)
 * states(name: string, two_digit_code:string )
 * cities(name: string, state_id: foreign key referring id in states)
+* messages(channel_id: foreign key referring id in channels, user_id: foreign key referring id in users, body: text)
+* channels(name: string, dm: boolean)
+* channel_users(channel_id: foreign key referring id in channels, user_id: foreign key referring id in users)
+
 ### Assotiations
 * User <-> Preference (one to one)
 * State -> City (one to many)
 * State -> Preference (one to many)
 * City -> Preference (one to many)
+* Channel -> Message (one to many)
+* User -> Message (one to many)
+* Channel <-> User (many to many, through ChannelUser)
 
 ## Planned Views
 * Sign up page(implemented)
@@ -127,7 +133,8 @@ To get a local copy up and running follow these simple example steps.
 * Home page(implemented)
 * Search page(implemented)
 * Search results details page(implemented)
-* Chat page(implemented)
+* Chat index page(implemented)
+* Chat message page(implemented)
 * Profile page(implemented)
 
 
