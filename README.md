@@ -102,9 +102,9 @@ To get a local copy up and running follow these simple example steps.
 * Display next page of search results: **/preferences?commit=Search&county_id=&direction=desc&end_date=&max_price=&min_price=&page=2&pet=Dog&sort=min_price&start_date=&state_id=**
 * Display of details of one search result: **/preferences/:id**
 * Display of specific user's personal information profile page: **/users/:id/edit**
-* Log out: /
-* Database Admin: /admin
-* Users Admin: /underoofadmin (must login with email: admin@underoof.com)
+* Log out: **/**
+* Database Admin: **/admin**
+* Users Admin: **/underoofadmin** (must login with email: admin@underoof.com)
 
 
 

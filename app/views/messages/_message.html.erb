@@ -1,4 +1,28 @@
-<div>
-    <div class="font-weight-bold text-left"><%= message.user.name %></div>
-    <div class="text-left"><%= message.body %></div>
-</div>
+<%if message.user.id == current_user.id%>
+    <li class="in">
+        <!-- user photo -->
+        <% if 5==3%>
+        <div class="chat-img">
+            <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+        </div>
+        <%end%>    
+        <div class="chat-body">
+        	<div class="chat-message">
+        		<h5><%= message.user.name %></h5>
+        		<p><%= message.body %></p>
+        	</div>
+        </div>
+    </li>
+<%else%>
+    <li class="out">
+        <div class="chat-body">
+        	<div class="chat-message">
+        		<h5><%= message.user.name %></h5>
+        		<p><%= message.body %></p>
+        	</div>
+        </div>
+    </li>
+ <%end%>  
+
+
+
