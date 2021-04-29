@@ -1,0 +1,60 @@
+<div class="col-md-8">
+    <h2>Room Preference</h2>
+    <div class="card mb-2">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">State</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <%= State.find(@preference.state_id).name%>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">City</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <%= City.find(@preference.city_id).name%>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Location</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <%= @preference.location%>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Expected Price</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    $<%= @preference.min_price%> - $<%= @preference.max_price%>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Expected Lease Period</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <%= @preference.start_date%> - <%= @preference.end_date%>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Pet Preference</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    <%= @preference.pet%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
