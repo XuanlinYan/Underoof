@@ -1,13 +1,5 @@
 <% provide(:button_text, 'Update Preference') %>
+<% provide(:profile_content, 'preferences/new_form') %>
+<% provide(:profile_title, 'Room Preferences') %>
+<%= render 'shared/sidebar'%>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-3 col-md-offset-3">
-      <%= render 'shared/sidebar' %>
-    </div>
-    <div class="col-md-6 col-md-offset-3">
-      <h1>Room Preference</h1>
-      <%= render 'new_form'%>
-    </div>
-  </div>
-</div>
