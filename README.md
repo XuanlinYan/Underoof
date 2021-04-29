@@ -159,4 +159,4 @@ To get a local copy up and running follow these simple example steps.
 * [city-state](https://github.com/loureirorg/city-state)
 * [font_awesome5_rails](https://github.com/tomkra/font_awesome5_rails)
 * [stimulus](https://stimulus.hotwire.dev/handbook/origin)
-* [redis]
+* redis
