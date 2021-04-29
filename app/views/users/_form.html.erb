@@ -26,6 +26,13 @@
       <div class="form-group">
         <%= f.select :gender, [ 'Male', 'Female', 'Prefer not to answer' ], {:prompt => 'Select Gender'},{:class => 'form-control'} %>
       </div>
+      <%# if logged in display avatar uploading %>
+      <% if logged_in? %>
+        <div class="form-group">
+          <%= f.label "Profile Photo" %>
+          <%= f.file_field :image, accept: "image/jpeg, image/png" %> <br>
+        </div>
+      <%end%>
      
       <%= f.submit yield(:button_text), class: "btn btn-dark btn-block" %>
      
