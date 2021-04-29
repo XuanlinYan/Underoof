@@ -73,9 +73,10 @@ To get a local copy up and running follow these simple example steps.
 
 
 #### Edit Profile
-* On personal information page, it will display name, email, gender and photo of current user
-* Users could edit their name, email, password, gender and photo
+* On personal information page, it will display name, email, gender and avatar of the current user
+* Users could edit their name, email, password, gender and upload the avatar
 * Password and password confirmation form could be nil when submitting
+* User who never uploaded the avatar, a default one will be displayed
 * On room preferences page, it will display preferences(state, city, location, min price, max price, pet preference, start date and end date) of current user if they created one before. Otherwise, there will be a "Create preferences" page.
 * Users could not modify any information of others
 
@@ -124,9 +125,11 @@ To get a local copy up and running follow these simple example steps.
 * messages(channel_id: foreign key referring id in channels, user_id: foreign key referring id in users, body: text)
 * channels(name: string, dm: boolean)
 * channel_users(channel_id: foreign key referring id in channels, user_id: foreign key referring id in users)
+* active_storage_attachments, active_storage_blobs and active_storage_variant_records, added by active_storage, used for image uploading
 
 ### Assotiations
 * User <-> Preference (one to one)
+* User -> Image (one to one)
 * State -> City (one to many)
 * State -> Preference (one to many)
 * City -> Preference (one to many)
@@ -160,3 +163,5 @@ To get a local copy up and running follow these simple example steps.
 * [font_awesome5_rails](https://github.com/tomkra/font_awesome5_rails)
 * [stimulus](https://stimulus.hotwire.dev/handbook/origin)
 * redis
+* mini_magick
+* image_processing
