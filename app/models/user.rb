@@ -10,8 +10,14 @@ class User < ApplicationRecord
     validates :gender, presence: {message: "cannot empty"}
     validates :password, presence: {message: "is a combination of uppercase letters, lowercase letters, and numbers. And the length is 8-15"}, format: { with: VALID_PASSWORD_REGEX },
                 allow_nil: true
+    # User avatar should be a certain format and less than size limit
+    validate :acceptable_image_type?
+    validate :acceptable_image_size?
 
     has_one :preference, dependent: :destroy
+
+    # added for active storage image uploading
+    has_one_attached :image
 
     has_many :channel_users, dependent: :destroy
     has_many :channels, through: :channel_users
@@ -22,4 +28,17 @@ class User < ApplicationRecord
                                                       BCrypt::Engine.cost
         BCrypt::Password.create(string, cost: cost)
     end
+
+    def acceptable_image_type?
+        return unless image.attached?
+        return if image.content_type.in? ["image/png",  "image/jpeg"]
+        errors.add :image, "must be a PNG or JPG"
+    end
+
+    def acceptable_image_size?
+        return unless image.attached?
+        return unless image.byte_size > 5.megabyte
+        errors.add :image, "is over 5MB"
+    end
+
 end
