@@ -1,8 +1,5 @@
 <br />
 
-
-
-
 <!-- TABLE OF CONTENTS -->
 
 <details open="open">
@@ -10,6 +7,9 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#paper-prototype">Paper Prototype</a>
     </li>
     <li>
       <a href="#functionality-summary">Functionality Summary</a>
@@ -39,7 +39,8 @@ Underoof is the web application where users without a room can find the matched 
 * Github Repo Link: https://github.com/XuanlinYan/Underoof
 * Heroku Link: https://underoof.herokuapp.com/
 
-
+## Paper Prototype
+https://drive.google.com/file/d/1oDYBoQf3NXEzCB66X1RcW6oX5WOZwlS9/view?usp=sharing
 
 <!-- Functionality Summary -->
 ## Functionality Summary
@@ -48,7 +49,6 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 #### Sign Up
-
 * With name which is required
 * With email, which is required and unique
 * With password which must contain capitalized letters, uncapitalized letters and digits and has length between 8 and 15
@@ -57,30 +57,33 @@ To get a local copy up and running follow these simple example steps.
 * Has error messages indicating where needs to be modified to sign up successfully
 
 #### Sign In
-
 * With unique email
 * With password
 * Shows error message "Incorrect username or password" if user does not exist or email and password does not match
 
-#### Search Page
+#### Search
 * Only signed in/up users could search
 * Users could search pages with state, city, min price, max price, start date, end date and pet prefernce
 * The content of city drop down menu is different based on which State is selected
 * Search results could be sorted by min price, max price, start date and end date
 * Default sort column is min price and default sort direction is asc
 * Users could view details of each search result by clicking on "show" button
+* On search details show page, users could see the selected user's personal information and room preferences and chat with them by clicking on "Let's chat" button
 * Paginate to ensure number of search results on each page is no more than 30
 
-#### Profile
-* On personal information page, it will display name, email and gender of current user
-* Users could edit their name, email, password or gender
+
+#### Edit Profile
+* On personal information page, it will display name, email, gender and photo of current user
+* Users could edit their name, email, password, gender and photo
 * Password and password confirmation form could be nil when submitting
-* On room preferences page, it will display preferences of current user if they created one before. Otherwise, there will be a "Create preferences" button. (not implemented yet)
+* On room preferences page, it will display preferences(state, city, location, min price, max price, pet preference, start date and end date) of current user if they created one before. Otherwise, there will be a "Create preferences" page.
 * Users could not modify any information of others
 
+#### Chat
+* Users could create, edit, destroy and show messages of a channel
+* Users could see the sent and received messages without refreshing the page
 
-#### Admin Access
-
+#### Access Admin
 * Use "/admin" to access the database. Underoof used the rails_admin gem to display all the data. This page supports administrators to manage all data include  edit, new, delete...
 * When the current user's email is **admin@underoof.com**, the "Profile" button on the right top corner will transfer to "Admin", click it to see all users details or use "/underoofadmin"
 
@@ -102,10 +105,14 @@ To get a local copy up and running follow these simple example steps.
 * Display next page of search results: **/preferences?commit=Search&county_id=&direction=desc&end_date=&max_price=&min_price=&page=2&pet=Dog&sort=min_price&start_date=&state_id=**
 * Display of details of one search result: **/preferences/:id**
 * Display of specific user's personal information profile page: **/users/:id/edit**
+* Display of specific user's preference profile page: **/preferences/:id/edit**
 * Log out: **/**
 * Database Admin: **/admin**
 * Users Admin: **/underoofadmin** (must login with email: admin@underoof.com)
-
+* Chat index page: **/channels**
+* Chat edit page: **/channels/:id/edit**
+* Chat create page: **/channels/new**
+* Specific chat messages page: **/channels/:id**
 
 
 ## Database Schema
@@ -152,3 +159,4 @@ To get a local copy up and running follow these simple example steps.
 * [city-state](https://github.com/loureirorg/city-state)
 * [font_awesome5_rails](https://github.com/tomkra/font_awesome5_rails)
 * [stimulus](https://stimulus.hotwire.dev/handbook/origin)
+* redis
