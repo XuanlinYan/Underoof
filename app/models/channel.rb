@@ -16,7 +16,7 @@ class Channel < ApplicationRecord
             channel
         else
             # create a new chatroom
-            channel = new(name: name, direct_message: true)
+            channel = Channel.new(name: name, direct_message: true)
             channel.users = users
             channel.save
             channel
