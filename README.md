@@ -30,9 +30,6 @@
 </details>
 
 
-## Paper Prototype
-https://drive.google.com/file/d/1oDYBoQf3NXEzCB66X1RcW6oX5WOZwlS9/view?usp=sharing
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -42,7 +39,8 @@ Underoof is the web application where users without a room can find the matched 
 * Github Repo Link: https://github.com/XuanlinYan/Underoof
 * Heroku Link: https://underoof.herokuapp.com/
 
-
+## Paper Prototype
+https://drive.google.com/file/d/1oDYBoQf3NXEzCB66X1RcW6oX5WOZwlS9/view?usp=sharing
 
 <!-- Functionality Summary -->
 ## Functionality Summary
