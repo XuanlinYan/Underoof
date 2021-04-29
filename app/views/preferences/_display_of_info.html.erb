@@ -1,0 +1,17 @@
+<div class="card mt-3">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+        <h6 class="mb-0"><%= fa_icon("address-card")%> Name: </h6>
+        <span class="text-secondary"><%=  @preference.user.name%></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+        <h6 class="mb-0"><%= fa_icon("venus-mars")%>   Gender: </h6>
+        <span class="text-secondary"><%= @preference.user.gender%></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+        <h6 class="mb-0"><%= fa_icon("envelope")%> Email: </h6>
+        <span class="text-secondary"><%= @preference.user.email%></span>
+        </li>
+        
+    </ul>
+</div>

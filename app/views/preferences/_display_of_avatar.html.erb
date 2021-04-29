@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex flex-column align-items-center text-center">
+            <%# Display user profile picture upload, need to be refactored!  %>
+        <% if @preference.user.image.attached?%>
+            <%= image_tag(@preference.user.image.variant(resize:"200x200"), class: 'rounded-circle') %>
+        <% else %>
+            
+            <%= image_tag("default_avatar.png", size: '200x200', class: 'rounded-circle')%> 
+        <% end %>
+        <div class="mt-3">
+            
+            <%= link_to "Let's chat!", channels_path ,class:"btn btn-dark" %>
+        </div>
+        </div>
+    </div>
+</div>
