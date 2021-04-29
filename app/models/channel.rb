@@ -5,8 +5,8 @@ class Channel < ApplicationRecord
 
     validates :name, presence: true
 
-    scope :public_channels, ->{ where(dm: false) }
-    scope :direct_messages, ->{ where(dm: true) }
+    scope :public_channels, ->{ where(direct_message: false) }
+    scope :direct_messages, ->{ where(direct_message: true) }
 
     def self.direct_message_for_users(users)
         user_ids = users.map(&:id).sort
@@ -16,7 +16,7 @@ class Channel < ApplicationRecord
             channel
         else
             # create a new chatroom
-            channel = new(name: name, dm: true)
+            channel = new(name: name, direct_message: true)
             channel.users = users
             channel.save
             channel

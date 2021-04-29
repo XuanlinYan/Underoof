@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2021_04_28_190947) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "dm", default: false
+    t.boolean "direct_message", default: false
   end
 
   create_table "cities", force: :cascade do |t|
