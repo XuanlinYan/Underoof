@@ -1,5 +1,5 @@
 <% provide(:button_text, 'Sign Up') %>
-<% provide(:img_src, "section_4.jpg")%>
+<% provide(:img_src, "signup-image.jpg")%>
 <div class="section">
     <div class="row">
         <div class="col-md-6">
@@ -7,8 +7,8 @@
             <%= render 'form', user: @user %>
         </div>
 
-        <div class="col-6">
-            <%= image_tag(yield(:img_src))%>
+        <div class="col-md-6 signup-div">
+            <%= image_tag(yield(:img_src), class: "signup")%>
         </div>
     </div> 
 </div>
