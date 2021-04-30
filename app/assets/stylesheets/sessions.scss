@@ -4,29 +4,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
-.container.im-bg{
-  background-image: 
-  url("https://i.postimg.cc/XJwXtv7F/nicontents-kpecd-Edz-MWU-unsplash-1.jpg");
-  background-size:     cover;                     
-  background-repeat:   no-repeat;
+.container.im-bg {
+  background-image: url("https://i.postimg.cc/XJwXtv7F/nicontents-kpecd-Edz-MWU-unsplash-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
 }
 
-
-
-.title{
-    font-family: "Alfa Slab One";
-    text-align: center;
+.title {
+  font-family: "Alfa Slab One";
+  text-align: center;
 }
 
-
-.errspan {    
+.errspan {
   float: right;
   top: 24px;
   right: 6px;
   position: relative;
   z-index: 2;
   color: grey;
+}
+
+.signin {
+  vertical-align: middle;
+  height: 160px;
+  width: 400px;
+}
+
+.signin-div {
+  padding-top: 80px;
+  padding-right: 50px;
 }
