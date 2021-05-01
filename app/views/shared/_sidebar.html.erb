@@ -1,21 +1,27 @@
 <div class="row justify-content-center">
+    
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Settings</div>
+        <% if current_user.image.attached?%>
+            <%= image_tag(current_user.image.variant(resize:"150x150"), class: 'rounded-circle') %>
+        <% else %>
+            <%= image_tag("default_avatar.png", size: '150x150', class: 'rounded-circle')%> 
+        <% end %>
+        <div class="sidebar-heading">Settings</div>
         <div class="list-group list-group-flush">
             <div class="list-group-item list-group-item-action bg-light">
                 <%= link_to "Personal Information", edit_user_path(current_user)%>
             </div>
 
             <div class="list-group-item list-group-item-action bg-light">
-            <%if current_user.preference.nil?%>
+                <%if current_user.preference.nil?%>
 
-                <%= link_to "Room Preference", new_preference_path%>
-            <% else %>
-                <%= link_to "Room Preference", edit_preference_path(current_user.preference)%>
-            <%end%>
+                    <%= link_to "Room Preference", new_preference_path%>
+                <% else %>
+                    <%= link_to "Room Preference", edit_preference_path(current_user.preference)%>
+                <%end%>
             </div>
         </div>
-    </div>
+      </div>
 
     <div class="col-lg-8 pl-5">
         <h1><%= yield(:profile_title)%></h1>

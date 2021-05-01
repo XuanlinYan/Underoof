@@ -1,16 +1,26 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.title{
-    font-family: "Alfa Slab One";
+.title {
+  font-family: "Alfa Slab One";
 }
 
-
-.errspan {    
+.errspan {
   float: right;
   top: 24px;
   right: 6px;
   position: relative;
   z-index: 2;
   color: grey;
+}
+
+.signup {
+  vertical-align: middle;
+  height: 350px;
+  width: 500px;
+}
+
+.signup-div {
+  padding-top: 80px;
+  padding-right: 80px;
 }
