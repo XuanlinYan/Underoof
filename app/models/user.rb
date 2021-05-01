@@ -9,9 +9,7 @@ class User < ApplicationRecord
     validates :email, presence: {message: "cannot empty"}, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
     validates :gender, presence: {message: "cannot empty"}
     validates :password, presence: {message: "is a combination of uppercase letters, lowercase letters, and numbers. And the length is 8-15"}, format: { with: VALID_PASSWORD_REGEX },
-                allow_nil: true
-    validates :password_confirmation, presence: {message: "is a combination of uppercase letters, lowercase letters, and numbers. And the length is 8-15"}, format: { with: VALID_PASSWORD_REGEX },
-                allow_nil: true
+                allow_nil: true, confirmation: true
     # User avatar should be a certain format and less than size limit
     validate :acceptable_image_type?
     validate :acceptable_image_size?
