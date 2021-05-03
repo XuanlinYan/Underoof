@@ -3,9 +3,9 @@
         <!-- user photo -->
         <div class="chat-img">
          <% if current_user.image.attached?%>
-            <%= image_tag(current_user.image.variant()) %>
+            <%= image_tag(current_user.image.variant(resize:"48x48")) %>
         <% else %>
-            <%= image_tag("default_avatar.png")%> 
+            <%= image_tag("default_avatar.png", size: '48x48')%> 
         <% end %>
         </div>   
         <div class="chat-body">
