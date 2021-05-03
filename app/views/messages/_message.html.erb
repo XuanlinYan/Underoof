@@ -1,11 +1,13 @@
 <%if message.user.id == current_user.id%>
     <li class="in">
         <!-- user photo -->
-        <% if 5==3%>
         <div class="chat-img">
-            <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
-        </div>
-        <%end%>    
+         <% if current_user.image.attached?%>
+            <%= image_tag(current_user.image.variant()) %>
+        <% else %>
+            <%= image_tag("default_avatar.png")%> 
+        <% end %>
+        </div>   
         <div class="chat-body">
         	<div class="chat-message">
         		<h5><%= message.user.name %></h5>

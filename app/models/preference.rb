@@ -15,8 +15,8 @@ class Preference < ApplicationRecord
    validates :pet, presence: true
 
    validates :user_id, presence: true
-   validates :state_id, presence: true
-   validates :city_id, presence: true
+   validates :state_id, presence: true, allow_nil: true
+   validates :city_id, presence: true, allow_nil: true
 
    private
 
