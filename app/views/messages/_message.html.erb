@@ -1,9 +1,9 @@
 <%if message.user.id == current_user.id%>
-    <li class="in">
+    <li class="out">
         <!-- user photo -->
         <div class="chat-img">
-         <% if current_user.image.attached?%>
-            <%= image_tag(current_user.image.variant(resize:"48x48")) %>
+         <% if message.user.image.attached?%>
+            <%= image_tag(message.user.image.variant(resize:"48x48")) %>
         <% else %>
             <%= image_tag("default_avatar.png", size: '48x48')%> 
         <% end %>
@@ -16,7 +16,13 @@
         </div>
     </li>
 <%else%>
-    <li class="out">
+    <li class="in">
+        <div class="chat-img">
+         <% if message.user.image.attached?%>
+            <%= image_tag(message.user.image.variant(resize:"48x48")) %>
+        <% else %>
+            <%= image_tag("default_avatar.png", size: '48x48')%> 
+        <% end %>
         <div class="chat-body">
         	<div class="chat-message">
         		<h5><%= message.user.name %></h5>
