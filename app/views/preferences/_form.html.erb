@@ -6,7 +6,7 @@
         <%= render "state_city_select"%>
         <div class="col-md-2">
             <%= f.label "Pet Preference"%>
-            <%= f.select :pet,["Dog", "Cat", "No"], {selected: params[:pet], include_blank: true}, {class: "form-control"} %>
+            <%= f.select :pet,["Both", "Dog", "Cat", "No"], {selected: params[:pet], include_blank: true}, {class: "form-control"} %>
         </div>
     </div>
     
