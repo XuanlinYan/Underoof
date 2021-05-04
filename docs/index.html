@@ -182,25 +182,29 @@
             </div>
 
             <div class="row">
-              <h3>Models</h3>
-              <p>users(name: string, email:string, gender:string, password_digest:string)</p>
-              <p>preferences(location: string, start_date: date, end_date:date, min_price: integer, max_price: integer, pet: string, user_id: foreign key referring id in users, state_id: foreign key referring id in states city_id: foreign key referring id in cities)</p>
-              <p>states(name: string, two_digit_code:string )</p>
-              <p>cities(name: string, state_id: foreign key referring id in states)</p>
-              <p>messages(channel_id: foreign key referring id in channels, user_id: foreign key referring id in users, body: text)</p>
-              <p>channels(name: string, dm: boolean)</p>
-              <p>channel_users(channel_id: foreign key referring id in channels, user_id: foreign key referring id in users)</p>
-              <p>active_storage_attachments, active_storage_blobs and active_storage_variant_records, added by active_storage, used for image uploading</p>
               
-              <h3>Assotiations</h3>
-              <p>User <-> Preference (one to one)</p>
-              <p>User -> Image (one to one)</p>
-              <p>State -> City (one to many)</p>
-              <p>State -> Preference (one to many)</p>
-              <p>City -> Preference (one to many)</p>
-              <p>Channel -> Message (one to many)</p>
-              <p>User -> Message (one to many)</p>
-              <p>Channel <-> User (many to many, through ChannelUser)</p>
+              <div class="col">
+                <div class="row"><h3>Models</h3></div>
+                <div class="row">users(name: string, email:string, gender:string, password_digest:string)</div>
+                <div class="row">preferences(location: string, start_date: date, end_date:date, min_price: integer, max_price: integer, pet: string, user_id: foreign key referring id in users, state_id: foreign key referring id in states city_id: foreign key referring id in cities)</div>
+                <div class="row">states(name: string, two_digit_code:string )</div>
+                <div class="row">cities(name: string, state_id: foreign key referring id in states)</div>
+                <div class="row">messages(channel_id: foreign key referring id in channels, user_id: foreign key referring id in users, body: text)</div>
+                <div class="row">channels(name: string, dm: boolean)</div>
+                <div class="row">channel_users(channel_id: foreign key referring id in channels, user_id: foreign key referring id in users)</div>
+                <div class="row">active_storage_attachments, active_storage_blobs and active_storage_variant_records, added by active_storage, used for image uploading</div>
+                <div class="row"> <h3>Assotiations</h3></div>
+                <div class="row">User <-> Preference (one to one) </div>
+                <div class="row">User -> Image (one to one) </div>
+                <div class="row">State -> City (one to many) </div>
+                <div class="row">State -> Preference (one to many) </div>
+                <div class="row">City -> Preference (one to many) </div>
+                <div class="row">Channel -> Message (one to many) </div>
+                <div class="row">User -> Message (one to many) </div>
+                <div class="row">Channel <-> User (many to many, through ChannelUser) </div>
+              </div>
+              
+              
             </div>
         </div>
     </section><!-- End Features Section -->
