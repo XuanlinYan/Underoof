@@ -1,5 +1,5 @@
 <div class="row justify-content-md-center">
-<%= form_with(model: channel) do |form| %>
+<%= form_with(model: [current_user, channel]) do |form| %>
   <% if channel.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(channel.errors.count, "error") %> prohibited this channel from being saved:</h2>

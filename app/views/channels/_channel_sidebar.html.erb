@@ -1,0 +1,37 @@
+<div class="col-sm-2">
+    <div class="d-flex justify-content-between">
+      <h6>Public Channels</h6>
+      <%= link_to fa_icon("plus"), new_user_channel_path(current_user) %>
+    </div>
+
+    <% Channel.public_channels.each do |channel| %>
+      <div>
+        <%= link_to channel.name, user_channel_path(current_user, channel) %>
+        <% if current_user.channels.public_channels.include?(channel) %>
+          <%= link_to fa_icon("times"), user_channel_channel_user_path(current_user, channel), method: :delete %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <hr/>
+
+    <div class="d-flex justify-content-between">
+      <h6>Direct Messages</h6>
+    </div>
+    <% current_user.channels.direct_messages.each do |dm| %>
+      <div>
+        <%= link_to dm.name, user_channel_path(current_user, dm) %>
+      </div>
+    <% end %>
+
+    <hr/>
+
+    <div class="d-flex justify-content-between">
+      <h6>Channel Members</h6>
+    </div>
+    <%if @channel %>
+    <% @channel.users.each do |user| %>
+      <div><%= user.name %></div>
+    <% end %>
+    <%end%>
+  </div>

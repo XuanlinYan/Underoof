@@ -2,11 +2,11 @@
     <li class="out">
         <!-- user photo -->
         <div class="chat-img">
-         <% if message.user.image.attached?%>
-            <%= image_tag(message.user.image.variant(resize:"48x48")) %>
-        <% else %>
-            <%= image_tag("default_avatar.png", size: '48x48')%> 
-        <% end %>
+            <% if message.user.image.attached?%>
+                <%= image_tag(message.user.image.variant(resize:"48x48")) %>
+            <% else %>
+                <%= image_tag("default_avatar.png", size: '48x48')%> 
+            <% end %>
         </div>   
         <div class="chat-body">
         	<div class="chat-message">
@@ -18,11 +18,12 @@
 <%else%>
     <li class="in">
         <div class="chat-img">
-         <% if message.user.image.attached?%>
-            <%= image_tag(message.user.image.variant(resize:"48x48")) %>
-        <% else %>
-            <%= image_tag("default_avatar.png", size: '48x48')%> 
-        <% end %>
+                <% if message.user.image.attached?%>
+                    <%= image_tag(message.user.image.variant(resize:"48x48")) %>
+                <% else %>
+                    <%= image_tag("default_avatar.png", size: '48x48')%> 
+                <% end %>
+        </div>
         <div class="chat-body">
         	<div class="chat-message">
         		<h5><%= message.user.name %></h5>

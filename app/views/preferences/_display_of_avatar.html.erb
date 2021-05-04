@@ -9,8 +9,7 @@
             <%= image_tag("default_avatar.png", size: '200x200', class: 'rounded-circle')%> 
         <% end %>
         <div class="mt-3">
-            
-            <%= link_to "Let's chat!", direct_message_path(@preference.user.id) ,class:"btn btn-dark" %>
+            <%= link_to "Let's chat!", user_direct_message_path(current_user, @preference.user.id) ,class:"btn btn-dark" %>
         </div>
         </div>
     </div>
