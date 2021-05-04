@@ -178,13 +178,29 @@
         <div class="container">
 
             <div class="section-title" data-aos="fade-up">
-              <h2>Database Schema</h2>
+                <h2>Database Schema</h2>
             </div>
 
             <div class="row">
-                <p>Summarize the schema but don’t go table by table, field by field in the narrative.</p>
-      
-      
+              <h3>Models</h3>
+              <p>users(name: string, email:string, gender:string, password_digest:string)</p>
+              <p>preferences(location: string, start_date: date, end_date:date, min_price: integer, max_price: integer, pet: string, user_id: foreign key referring id in users, state_id: foreign key referring id in states city_id: foreign key referring id in cities)</p>
+              <p>states(name: string, two_digit_code:string )</p>
+              <p>cities(name: string, state_id: foreign key referring id in states)</p>
+              <p>messages(channel_id: foreign key referring id in channels, user_id: foreign key referring id in users, body: text)</p>
+              <p>channels(name: string, dm: boolean)</p>
+              <p>channel_users(channel_id: foreign key referring id in channels, user_id: foreign key referring id in users)</p>
+              <p>active_storage_attachments, active_storage_blobs and active_storage_variant_records, added by active_storage, used for image uploading</p>
+              
+              <h3>Assotiations</h3>
+              <p>User <-> Preference (one to one)</p>
+              <p>User -> Image (one to one)</p>
+              <p>State -> City (one to many)</p>
+              <p>State -> Preference (one to many)</p>
+              <p>City -> Preference (one to many)</p>
+              <p>Channel -> Message (one to many)</p>
+              <p>User -> Message (one to many)</p>
+              <p>Channel <-> User (many to many, through ChannelUser)</p>
             </div>
         </div>
     </section><!-- End Features Section -->
