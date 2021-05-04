@@ -1144,7 +1144,7 @@ section {
 .pricing .box {
   padding: 20px;
   background: #f9f9f9;
-  text-align: center;
+  text-align: left;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
