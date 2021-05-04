@@ -38,6 +38,9 @@ Underoof is the web application where users without a room can find the matched 
 * Team members: Xiangyu Li, Xuanlin Yan, Xulin Wang, Zhengchu
 * Github Repo Link: https://github.com/XuanlinYan/Underoof
 * Heroku Link: https://underoof.herokuapp.com/
+* Github Page Link: https://xuanlinyan.github.io/Underoof/
+* Brandeis Project Text File: https://drive.google.com/file/d/1qwkGkl6xxQuL3eoA-hP2RmTGciKcAEfu/view?usp=sharing
+* Presentation slides: 
 
 ## Paper Prototype
 https://drive.google.com/file/d/1oDYBoQf3NXEzCB66X1RcW6oX5WOZwlS9/view?usp=sharing
