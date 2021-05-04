@@ -4,12 +4,12 @@ class ChannelUsersController < ApplicationController
 
     def create
         @channel.channel_users.where(user: current_user).first_or_create
-        redirect_to @channel
+        redirect_to user_channel_path(current_user, @channel)
     end
 
     def destroy
         @channel.channel_users.where(user: current_user).destroy_all
-        redirect_to @channel
+        redirect_to user_channel_path(current_user, @channel)
     end
 
     private

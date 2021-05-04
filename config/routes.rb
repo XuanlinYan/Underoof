@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :channels do
-    resource :channel_user
-    resources :messages
+  resources :users do
+    resources :channels do
+      resource :channel_user
+      resources :messages
+    end
+    resources :direct_messages
   end
+  
 
-  resources :direct_messages
+  
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :preferences, except: :index
