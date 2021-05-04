@@ -809,25 +809,6 @@ section {
   color: #5e5e5e;
 }
 
-.more-services .read-more a {
-  color: #777777;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 12px;
-  transition: 0.4s;
-}
-
-.more-services .read-more a:hover {
-  text-decoration: underline;
-}
-
-.more-services .card:hover .card-body {
-  background: #3498db;
-}
-
-.more-services .card:hover .read-more a, .more-services .card:hover .card-title, .more-services .card:hover .card-title a, .more-services .card:hover .card-text {
-  color: #fff;
-}
 
 /*--------------------------------------------------------------
 # Features
