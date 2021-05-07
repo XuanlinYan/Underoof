@@ -40,7 +40,7 @@ Underoof is the web application where users without a room can find the matched 
 * Heroku Link: https://underoof.herokuapp.com/
 * Github Page Link: https://xuanlinyan.github.io/Underoof/
 * Brandeis Project Text File: https://drive.google.com/file/d/1qwkGkl6xxQuL3eoA-hP2RmTGciKcAEfu/view?usp=sharing
-* Presentation slides: 
+* Presentation slides: https://drive.google.com/file/d/1bx4joXJEriN1XAxZEM-pmFjhwOPAsJDZ/view?usp=sharing
 
 ## Paper Prototype
 https://drive.google.com/file/d/1oDYBoQf3NXEzCB66X1RcW6oX5WOZwlS9/view?usp=sharing
