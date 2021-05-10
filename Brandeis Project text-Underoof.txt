@@ -1,0 +1,11 @@
+---
+name: Underoof
+blurb: With Underoof, you could find roomates based on your location, price, pet preference. 
+course: CS166B
+semester: 2021 (Spring)
+github: https://github.com/XuanlinYan/Underoof 
+application: https://underoof.herokuapp.com/ 
+presentation:  https://docs.google.com/presentation/d/pQMUpz4/edit?usp=sharing (Add to this Google Folder: xxx)
+image: https://i.postimg.cc/nr3FfjHL/128-logo.jpg
+team: Xuanlin Yan, XulinWang, Xiangyu Li, Zheng Chu
+---
